@@ -6,4 +6,5 @@ Repository of Capture The Flag (CTF) challenge artifacts, solver scripts, and te
 
 | Platform | Challenge | Category | Write-Up |
 | :--- | :--- | :--- | :--- |
-| **TryHackMe (THM)** | [Mr. Phisher](./THM/mrphisher/) | Malware Analysis / VBA Macro | [`THM/mrphisher/README.md`](./THM/mrphisher/README.md) |
+| **TryHackMe (THM)** | [Mr. Phisher](./THM/mrphisher/) | Malware Analysis / VBA Macro (`[MS-OVBA]`) | [`THM/mrphisher/README.md`](./THM/mrphisher/README.md) |
+| **TryHackMe (THM)** | [Handbook for the Recently Compromised](./THM/handbookfortherecentlycompromised/) | DFIR / Windows Event Logs (`.evtx`) & MITRE ATT&CK | [`THM/handbookfortherecentlycompromised/README.md`](./THM/handbookfortherecentlycompromised/README.md) |
