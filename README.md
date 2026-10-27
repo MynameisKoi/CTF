@@ -8,3 +8,4 @@ Repository of Capture The Flag (CTF) challenge artifacts, solver scripts, and te
 | :--- | :--- | :--- | :--- |
 | **TryHackMe (THM)** | [Mr. Phisher](./THM/mrphisher/) | Malware Analysis / VBA Macro (`[MS-OVBA]`) | [`THM/mrphisher/README.md`](./THM/mrphisher/README.md) |
 | **TryHackMe (THM)** | [Handbook for the Recently Compromised](./THM/handbookfortherecentlycompromised/) | DFIR / Windows Event Logs (`.evtx`) & MITRE ATT&CK | [`THM/handbookfortherecentlycompromised/README.md`](./THM/handbookfortherecentlycompromised/README.md) |
+| **TryHackMe (THM)** | [The Waiting Room](./THM/thewaitingroom/) | DFIR / Phishing / OneNote (`.one`), Sysmon & PCAP RC4 | [`THM/thewaitingroom/README.md`](./THM/thewaitingroom/README.md) |
