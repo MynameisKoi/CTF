@@ -12,3 +12,4 @@ Repository of Capture The Flag (CTF) challenge artifacts, solver scripts, and te
 | **TryHackMe (THM)** | [Classic Passwd](./THM/classicpasswd/) | Reverse Engineering / ELF `x86_64` & Stack Buffer Overflow | [`THM/classicpasswd/README.md`](./THM/classicpasswd/README.md) |
 | **TryHackMe (THM)** | [Mayhem Room](./THM/mayhemroom/) | DFIR / Network Forensics (`.pcapng`) & Havoc C2 AES-256-CTR | [`THM/mayhemroom/README.md`](./THM/mayhemroom/README.md) |
 | **TryHackMe (THM)** | [0x41haz](./THM/0x41haz/) | Reverse Engineering / ELF Header Repair & `x86_64` Crackme | [`THM/0x41haz/README.md`](./THM/0x41haz/README.md) |
+| **TryHackMe (THM)** | [Compiled](./THM/compiled/) | Reverse Engineering / ELF `x86_64` & `scanf` Format String Parsing | [`THM/compiled/README.md`](./THM/compiled/README.md) |
