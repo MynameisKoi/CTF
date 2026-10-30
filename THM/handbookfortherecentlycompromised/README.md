@@ -8,19 +8,9 @@
 
 ---
 
-## 1. Artifact Inventory & Extraction
+## 1. Artifact Inventory
 
-First, we inspected `artifacts.tar.gz` and extracted its contents:
-
-### Command Executed
-```bash
-mkdir -p handbookfortherecentlycompromised \
-  && cd handbookfortherecentlycompromised \
-  && tar -tzvf ../artifacts.tar.gz \
-  && tar -xzf ../artifacts.tar.gz
-```
-
-### Output
+The challenge provides the following core artifacts:
 ```text
 drwxr-xr-x ubuntu/ubuntu     0 2026-10-20 10:25 ./artifacts/
 drwxr-xr-x ubuntu/ubuntu     0 2026-10-22 01:33 ./artifacts/tools/

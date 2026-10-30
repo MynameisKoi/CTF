@@ -10,15 +10,7 @@
 
 ---
 
-## 1. Environment & Artifact Extraction
-
-In this room, the TryHackMe target machine (`<TARGET_IP>`) is a GUI-only Linux instance containing `MrPhisher.docm` and `mr-phisher.zip` without inbound SSH credentials or an open web server hosting the files.
-
-The challenge artifacts (`MrPhisher.docm` and `mr-phisher.zip`) were transferred from the GUI lab instance to the local analysis workspace for examination.
-
----
-
-## 2. Step 1 — Unpacking the `.docm` and `.zip` Containers & Strings Triage
+## 1. Step 1 — Unpacking the `.docm` Container & Strings Triage
 
 First, we extracted `MrPhisher.docm` as a ZIP archive (since Office Open XML `.docm` files are ZIP containers), checked the contents of `mr-phisher.zip`, and ran `strings` on `word/vbaProject.bin`:
 
@@ -98,7 +90,7 @@ NewMacros=26, 26, 1614, 711,
 
 ---
 
-## 3. Step 2 — Writing a Custom MS-OVBA Decompressor in Python
+## 2. Step 2 — Writing a Custom MS-OVBA Decompressor in Python
 
 Since `oletools`/`olevba` was not pre-installed on the VM, we implemented the `[MS-OVBA] 2.4.1` decompression algorithm directly in Python to reconstruct the exact uncompressed VBA source stream from `vbaProject.bin`.
 
@@ -131,7 +123,7 @@ IndexError: bytearray index out of range
 
 ---
 
-## 4. Step 3 — Full MS-OVBA Extraction & Automatic XOR Flag Decoding
+## 3. Step 3 — Full MS-OVBA Extraction & Automatic XOR Flag Decoding
 
 Fixing the bit-count calculation (`max(4, (decompressed_cur - 1).bit_length())`), checking `chunk_sig == 0b011`, and iterating over **all** `b"Attribut"` matches (`re.finditer(b"Attribut", data)`) cleanly decompressed the `NewMacros` stream and decoded the flag in one shot:
 
@@ -228,7 +220,7 @@ flag{a39a07a239aacd40c948d852a5c9f8d1}
 
 ---
 
-## 5. How the Macro Obfuscation Works
+## 4. How the Macro Obfuscation Works
 
 Looking at the recovered `NewMacros` VBA code:
 

@@ -11,7 +11,7 @@
 
 ## 1. Initial Triage & PCAP Overview
 
-First, we extracted `evidence-1700022726858.zip` on Kali Linux and inspected the protocol hierarchy and IPv4 conversations using `tshark`:
+First, we inspected the packet capture (`traffic.pcapng`) to analyze the protocol hierarchy and IPv4 conversations using `tshark`:
 
 ### Command Executed
 ```bash

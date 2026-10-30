@@ -11,24 +11,16 @@
 
 ---
 
-## 1. Scenario & Artifact Extraction
+## 1. Scenario & Artifact Inventory
 
 > *"A routine supplier email has left Michelle Smith with an attachment that did not open as expected. Examine the correspondence, trace the workstation activity, and determine what happened after she opened it."*
 
-The lab archive `artifacts2.tar.gz` was extracted into `./thewaitingroom/`:
-
-```bash
-mkdir -p thewaitingroom \
-  && cd thewaitingroom \
-  && tar -xzvf ../artifacts2.tar.gz
-```
-
-Top-level files extracted:
-- `vendor.eml`: Phishing email sent to Michelle Smith (`m.smith@westbrook.thm`).
-- `Sysmon-incident.evtx`: Windows Sysmon Operational event log from the workstation (`MERIDIAN`).
-- `incident.pcap`: Packet capture of the workstation's DNS and HTTP traffic.
-- `tools/evtx_dump`: Binary `.evtx` to `.jsonl` converter.
-- `tools/python-env/bin/one-extract`: Volexity OneNote (`.one`) object extractor.
+The challenge provides the following core forensic artifacts:
+- **`vendor.eml`**: Phishing email sent to Michelle Smith (`m.smith@westbrook.thm`).
+- **`Sysmon-incident.evtx`**: Windows Sysmon Operational event log from the workstation (`MERIDIAN`).
+- **`incident.pcap`**: Packet capture of the workstation's DNS and HTTP traffic.
+- **`tools/evtx_dump`**: Standalone `.evtx` to `.jsonl` converter utility.
+- **`tools/python-env/bin/one-extract`**: OneNote (`.one`) embedded file extractor.
 
 ---
 
