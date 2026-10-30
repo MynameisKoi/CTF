@@ -10,23 +10,22 @@
 
 ---
 
-## 1. Environment & Artifact Exfiltration
+## 1. Environment & Artifact Extraction
 
-In this room, the TryHackMe target machine (`10.146.133.145`) is a GUI-only Linux instance containing `MrPhisher.docm` and `mr-phisher.zip` without inbound SSH credentials or an open web server hosting the files.
+In this room, the TryHackMe target machine (`<TARGET_IP>`) is a GUI-only Linux instance containing `MrPhisher.docm` and `mr-phisher.zip` without inbound SSH credentials or an open web server hosting the files.
 
-To analyze the files on our Kali Linux machine (`192.168.56.101` on Host-Only / `192.168.130.120` on TryHackMe `tun0`), we ran a persistent HTTP PUT/POST drop server (`/home/kali/ctf/scripts/dropserver.py` on port `9000`) on Kali and uploaded both files into `/home/kali/ctf/challenges/`.
+The challenge artifacts (`MrPhisher.docm` and `mr-phisher.zip`) were transferred from the GUI lab instance to the local analysis workspace for examination.
 
 ---
 
 ## 2. Step 1 — Unpacking the `.docm` and `.zip` Containers & Strings Triage
 
-First, we inspected `/home/kali/ctf/challenges`, extracted `MrPhisher.docm` as a ZIP archive (since Office Open XML `.docm` files are ZIP containers), checked the contents of `mr-phisher.zip`, and ran `strings` on `word/vbaProject.bin`:
+First, we extracted `MrPhisher.docm` as a ZIP archive (since Office Open XML `.docm` files are ZIP containers), checked the contents of `mr-phisher.zip`, and ran `strings` on `word/vbaProject.bin`:
 
 ### Command Executed
 ```bash
-ls -la /home/kali/ctf/challenges \
-  && mkdir -p /home/kali/ctf/challenges/mrphisher_work \
-  && cd /home/kali/ctf/challenges/mrphisher_work \
+mkdir -p mrphisher_work \
+  && cd mrphisher_work \
   && unzip -o ../MrPhisher.docm -d docm_extracted 2>&1 || true \
   && unzip -l ../mr-phisher.zip 2>&1 || true \
   && strings -n 4 docm_extracted/word/vbaProject.bin 2>/dev/null
@@ -141,7 +140,7 @@ Fixing the bit-count calculation (`max(4, (decompressed_cur - 1).bit_length())`)
 python3 -c '
 import re
 
-data = open("/home/kali/ctf/challenges/mrphisher_work/docm_extracted/word/vbaProject.bin", "rb").read()
+data = open("mrphisher_work/docm_extracted/word/vbaProject.bin", "rb").read()
 
 def decompress_ovba(stream: bytes) -> bytes:
     out = bytearray()

@@ -10,7 +10,7 @@
 
 ## 1. Initial Binary Triage (`file`, `rabin2 -I`, `rabin2 -z`)
 
-First, we inspected the binary on Kali Linux (`/home/kali/ctf/challenges/classicpasswd/`) using `file` and `rabin2`:
+First, we inspected the binary using `file` and `rabin2`:
 
 ### Command Executed
 ```bash

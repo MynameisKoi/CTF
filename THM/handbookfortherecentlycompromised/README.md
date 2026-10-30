@@ -10,12 +10,12 @@
 
 ## 1. Artifact Inventory & Extraction
 
-First, we inspected `artifacts.tar.gz` on our Kali Linux analysis machine (`/home/kali/ctf/challenges/handbookfortherecentlycompromised/`) and extracted its contents:
+First, we inspected `artifacts.tar.gz` and extracted its contents:
 
 ### Command Executed
 ```bash
-mkdir -p /home/kali/ctf/challenges/handbookfortherecentlycompromised \
-  && cd /home/kali/ctf/challenges/handbookfortherecentlycompromised \
+mkdir -p handbookfortherecentlycompromised \
+  && cd handbookfortherecentlycompromised \
   && tar -tzvf ../artifacts.tar.gz \
   && tar -xzf ../artifacts.tar.gz
 ```

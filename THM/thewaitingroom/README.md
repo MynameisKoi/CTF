@@ -15,11 +15,11 @@
 
 > *"A routine supplier email has left Michelle Smith with an attachment that did not open as expected. Examine the correspondence, trace the workstation activity, and determine what happened after she opened it."*
 
-We uploaded the lab archive to `/home/kali/ctf/challenges/artifacts2.tar.gz` via the Kali CTF Drop Server (`:9000`) and unpacked it into `/home/kali/ctf/challenges/thewaitingroom/`:
+The lab archive `artifacts2.tar.gz` was extracted into `./thewaitingroom/`:
 
 ```bash
-mkdir -p /home/kali/ctf/challenges/thewaitingroom \
-  && cd /home/kali/ctf/challenges/thewaitingroom \
+mkdir -p thewaitingroom \
+  && cd thewaitingroom \
   && tar -xzvf ../artifacts2.tar.gz
 ```
 
