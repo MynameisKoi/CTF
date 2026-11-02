@@ -2,12 +2,12 @@
 
 Over the weekend, I participated in **Operation Cymbal: Cold Room (2026 CTF)**, a premiere cloud security and DFIR competition hosted by **Google Cloud Security** in partnership with **Hack The Box**.
 
-Competing as team **BoizAllVuln**, I am thrilled to share that we achieved a **100% completion rate (18/18 challenges solved, 2,075 points)**, placing **458th out of 1,716 teams worldwide**! 🚀
+Competing solo as a one-man team (**BoizAllVuln**), I am thrilled to share that I achieved a **100% completion rate (18/18 challenges solved, 2,075 points)**, placing **458th out of 1,716 teams worldwide**! 🚀
 
 ---
 
 ### 🔍 The Scenario
-Cymbal Investments collapsed following three seemingly unrelated security breaches, leaving its digital infrastructure sealed in a forensic "Cold Room." Operating as reconstructors in **Google Security Operations (Google SecOps / Chronicle SIEM)**, our mission was to hunt through telemetry, untangle concurrent adversary behaviors, and reconstruct each intrusion lifecycle end-to-end:
+Cymbal Investments collapsed following three seemingly unrelated security breaches, leaving its digital infrastructure sealed in a forensic "Cold Room." Operating as a solo reconstructor in **Google Security Operations (Google SecOps / Chronicle SIEM)**, my mission was to hunt through telemetry, untangle concurrent adversary behaviors, and reconstruct each intrusion lifecycle end-to-end:
 
 1️⃣ **Track 1: Deceptive Click (SocGholish / FAKEUPDATES)**
 Investigated a drive-by compromise initiated via a compromised WordPress site delivering malicious fake browser updates. Traced process hollowing into `svchost.exe`, internal Active Directory reconnaissance, Kerberoasting of MSSQL Service Principal Names (`MSSQLSvc/CYM-DB-01`), and staging of financial audit archives.

@@ -1,6 +1,6 @@
 # Reconstructing Enterprise Breaches in Google SecOps: Solving All 18 Challenges in Operation Cymbal: Cold Room CTF
 
-*How our team achieved a 100% clear (18/18) in Google Cloud Security × Hack The Box’s premiere enterprise threat-hunting competition.*
+*How a solo investigator achieved a 100% clear (18/18) in Google Cloud Security × Hack The Box’s premiere enterprise threat-hunting competition.*
 
 ---
 
@@ -11,7 +11,7 @@ In late October 2026, **Google Cloud Security** partnered with **Hack The Box** 
 The premise was straight out of an incident responder's playbook:
 > *Cymbal Investments collapsed following three seemingly unrelated security breaches. Its entire digital environment has been frozen and sealed inside a forensic "Cold Room." As reconstructors operating in Google Security Operations (Google SecOps / Chronicle SIEM), our goal was to comb through raw telemetry, disentangle concurrent attacker activities, and piece together the end-to-end intrusion kill chains before rival investigators beat us to the truth.*
 
-Competing under the handle **Khoi Duong** with team **BoizAllVuln**, we achieved a **100% completion rate, solving all 18 challenges across all 3 breach tracks (2,075 points)**, finishing **458th out of 1,716 teams worldwide**.
+Competing solo as a one-man team under the handle **Khoi Duong** (**BoizAllVuln**), I achieved a **100% completion rate, solving all 18 challenges across all 3 breach tracks (2,075 points)**, finishing **458th out of 1,716 teams worldwide**.
 
 In this article, I will break down the investigation methodology, the Unified Data Model (UDM) queries used in Chronicle SIEM, and the anatomy of the three concurrent attacks—from classic drive-by malware to cutting-edge AI-enabled payloads querying the Google Gemini API mid-execution.
 
@@ -27,7 +27,7 @@ Chronicle SIEM achieves this through its **Unified Data Model (UDM)**. Rather th
 - `target.file.full_path`: File creation, modification, and access paths.
 - `target.url`: Full HTTP/HTTPS request URIs.
 
-This schema allowed us to pivot seamlessly from network proxies to endpoint execution and cloud audit logs in fractions of a second.
+This schema allowed me to pivot seamlessly from network proxies to endpoint execution and cloud audit logs in fractions of a second.
 
 ---
 
