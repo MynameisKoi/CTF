@@ -115,7 +115,7 @@ This query isolated exactly **11 outbound HTTP events**:
 2. `https://copilot-proxy.githubusercontent.com/v1/engines/copilot-codex/completions`
 3. `https://cr.cymbal.corp/v2/backend-service/blobs/uploads/`
 4. `https://dev-metrics-cdn.com/api/v2/telemetry`
-5. `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSy[MOCK_CTF_API_KEY]`
+5. `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyD8x9L2M1N4P7Q0R3S6T9U2V5W8X1Y4Z7`
 6. `https://github.cymbal.corp/cloud-platform/deploy-configs`
 7. `https://jira.cymbal.corp/browse/DEV-2041`
 8. `https://marketplace.visualstudio.com.cdn-cache.net/extensions/DevTools/SyntaxOptimizer/2.1.4/SyntaxOptimizer-2.1.4.vsix`
