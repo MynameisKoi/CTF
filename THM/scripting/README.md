@@ -7,15 +7,17 @@
 - **Tasks Covered**:
   - Task 1: [Easy] Base64
   - Task 2: [Medium] Gotta Catch 'em All
+  - Task 3: [Hard] Encrypted Server Chit Chat
 
 ---
 
-## Challenge Answers
+## Challenge Answers Summary
 
 | Task | Challenge Question | Answer |
 |---|---|---|
-| **Task 1** | What is the final string? | `HackBack2019=` |
-| **Task 2** | Once you have done all operations, what number do you get (rounded to 2 decimal places at the end of your calculation)? | `344769.12` |
+| **Task 1: [Easy] Base64** | What is the final string? | `HackBack2019=` |
+| **Task 2: [Medium] Gotta Catch 'em All** | Once you have done all operations, what number do you get (rounded to 2 decimal places at the end of your calculation)? | `344769.12` |
+| **Task 3: [Hard] Encrypted Server Chit Chat** | What is the flag? | `THM{eW-sCrIpTiNg-AnD-cRyPtO}` |
 
 ---
 
@@ -63,8 +65,8 @@ Dividing the file size (33,715,532 bytes) by $1.76 \times 10^6$ gives $\approx 1
 
 ### Step-by-Step Calculation Trace
 
-| Step | Port | Instruction | Operation & Calculation | Running Total | Next Port |
-|:---:|:---:|:---:|---|:---:|:---:|
+| Step | Port | Server Instruction | Operation | Running Total | Next Port |
+|:---:|:---:|:---:|:---:|:---:|:---:|
 | **01** | `1337` | `add 900 23456` | $0.0000 + 900.0$ | `900.0000` | `23456` |
 | **02** | `23456` | `minus 2 8888` | $900.0000 - 2.0$ | `898.0000` | `8888` |
 | **03** | `8888` | `multiply 4 9823` | $898.0000 \times 4.0$ | `3592.0000` | `9823` |
@@ -102,8 +104,35 @@ Dividing the file size (33,715,532 bytes) by $1.76 \times 10^6$ gives $\approx 1
 | **End** | `9765` | `STOP` | *Sequence terminated* | **`344769.12`** | — |
 
 ### Solution Script
-The automated Python solution is available at [`solve_task2.py`](solve_task2.py). Run using:
-
+The automated Python solution is available at [`solve_task2.py`](solve_task2.py):
 ```bash
 python3 solve_task2.py <machine_ip>
+```
+
+---
+
+## Task 3: [Hard] Encrypted Server Chit Chat
+
+### Overview
+- **Protocol / Port**: UDP `4000`
+- **Cipher**: AES-GCM (Galois/Counter Mode)
+- **Protocol Flow**:
+  1. Client sends `hello` to port `4000`. Server responds confirming connection and instructing to send `ready`.
+  2. Client sends `ready`. Server returns:
+     - AES Key (24 bytes / 192-bit AES): `thisisaverysecretkeyl337`
+     - Nonce / IV (12 bytes / 96-bit GCM IV): `secureivl337`
+     - Target SHA256 checksum (32 raw bytes):
+       `5d77f018d2bf777860548655d84d7382dc27d6ce816ede68f65d72621463d9da`
+     - Instruction to send `final` to receive all candidate encrypted flags.
+  3. Client sends `final`. Server streams 32 sequential UDP packets containing 16 candidate flags in pairs:
+     - `Packet 2n`: Encrypted ciphertext
+     - `Packet 2n + 1`: 16-byte GCM authentication tag
+  4. In PyCA cryptography (`AESGCM`), decryption takes `ciphertext + tag`.
+  5. The decrypted plaintext whose SHA256 matches the target checksum is the authentic flag:
+     `THM{eW-sCrIpTiNg-AnD-cRyPtO}`
+
+### Solution Script
+The automated Python solution is available at [`solve_task3.py`](solve_task3.py):
+```bash
+python3 solve_task3.py <machine_ip>
 ```
