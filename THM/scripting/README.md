@@ -1,114 +1,109 @@
-# TryHackMe: Scripting - Task 1: [Easy] Base64
+# TryHackMe: Scripting
 
 ## Overview
 
 - **Room**: Scripting
-- **Task**: 1 - [Easy] Base64
 - **Platform**: TryHackMe
+- **Tasks Covered**:
+  - Task 1: [Easy] Base64
+  - Task 2: [Medium] Gotta Catch 'em All
+
+---
+
+## Challenge Answers
+
+| Task | Challenge Question | Answer |
+|---|---|---|
+| **Task 1** | What is the final string? | `HackBack2019=` |
+| **Task 2** | Once you have done all operations, what number do you get (rounded to 2 decimal places at the end of your calculation)? | `344769.12` |
+
+---
+
+## Task 1: [Easy] Base64
+
+### Overview
 - **Artifact**: `b64_1550406728131.txt` (~33.7 MB)
-- **Challenge Description**: This file has been Base64 encoded 50 consecutive times. Write a script to retrieve the flag.
+- **Description**: This file has been Base64 encoded 50 consecutive times. Write a script to retrieve the flag.
 
----
-
-## Challenge Answer
-
-| Challenge / Question | Answer |
-|---|---|
-| What is the final string? | `HackBack2019=` |
-
----
-
-## Technical Analysis
-
-### 1. The Math Behind the File Size
-
-Base64 encoding represents binary data using an ASCII character set, expanding the data size by approximately a factor of $4/3$ (~133.3%):
-
+### The Math Behind the File Size
+Base64 encoding expands raw data by a factor of $\approx 4/3$ per iteration:
 $$\text{Encoded Size} \approx \text{Original Size} \times \left(\frac{4}{3}\right)^n$$
 
-For $n = 50$ iterations:
+For $n = 50$:
 $$\left(\frac{4}{3}\right)^{50} \approx 1,765,852.88$$
 
-Given an initial file size of **33,715,532 bytes** (~33.7 MB), peeling back 50 layers reveals an original payload of:
-$$\frac{33,715,532}{1,765,852.88} \approx 19 \text{ bytes}$$
-
-Indeed, the 50th decode produces the 13-character flag string:
+Dividing the file size (33,715,532 bytes) by $1.76 \times 10^6$ gives $\approx 19$ bytes, yielding the 13-character string:
 `HackBack2019=`
 
----
-
-## Implementations
-
-### General Methodology
-1. **Read input from the file**: Load the initial Base64 text.
-2. **Define a decoding function**: Isolate the Base64 decode logic into a dedicated function.
-3. **Execute in a loop**: Repeat the decoding function for 50 iterations.
-
----
-
-### Python Implementation ([`solve.py`](solve.py))
-
-```python
-#!/usr/bin/env python3
-import sys
-import base64
-from pathlib import Path
-
-DEFAULT_FILE = Path(__file__).resolve().parent / "b64_1550406728131.txt"
-
-def decode_base64(data: bytes) -> bytes:
-    """Decodes a single layer of base64 data."""
-    return base64.b64decode(data.strip())
-
-def solve(input_path: Path, iterations: int = 50) -> str:
-    """Reads input file and repeatedly applies base64 decoding."""
-    with open(input_path, "rb") as f:
-        data = f.read()
-
-    for i in range(1, iterations + 1):
-        data = decode_base64(data)
-
-    return data.decode("utf-8", errors="replace").strip()
-
-if __name__ == "__main__":
-    target = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_FILE
-    flag = solve(target, iterations=50)
-    print(f"Final Decoded String: {flag}")
-```
-
-#### Run:
-```bash
-python3 solve.py
-```
+### Solution Scripts
+- Python solver: [`solve.py`](solve.py)
+  ```bash
+  python3 solve.py
+  ```
+- Bash solver: [`solve.sh`](solve.sh)
+  ```bash
+  ./solve.sh
+  ```
 
 ---
 
-### Bash Implementation ([`solve.sh`](solve.sh))
+## Task 2: [Medium] Gotta Catch 'em All
 
-A streaming pipeline dynamically built in Bash streams the data through 50 decoding stages without disk I/O bottlenecks:
+### Overview
+- **Target URL**: `http://<machine_ip>:3010`
+- **Initial Port**: `1337`
+- **Termination Port**: `9765` (Response: `STOP`)
+- **Mechanics**:
+  1. Each port runs an HTTP web server displaying an instruction in the format:
+     `operation number next_port` (e.g. `add 900 23456`)
+  2. The calculation begins with an initial total of `0`.
+  3. Supported operations: `add`, `minus`, `multiply`, `divide`.
+  4. Each port is live for only **4 seconds** before closing and cycling to the next port.
+  5. The sequence terminates when port `9765` responds with `STOP`.
+
+### Step-by-Step Calculation Trace
+
+| Step | Port | Instruction | Operation & Calculation | Running Total | Next Port |
+|:---:|:---:|:---:|---|:---:|:---:|
+| **01** | `1337` | `add 900 23456` | $0.0000 + 900.0$ | `900.0000` | `23456` |
+| **02** | `23456` | `minus 2 8888` | $900.0000 - 2.0$ | `898.0000` | `8888` |
+| **03** | `8888` | `multiply 4 9823` | $898.0000 \times 4.0$ | `3592.0000` | `9823` |
+| **04** | `9823` | `divide 2 9887` | $3592.0000 / 2.0$ | `1796.0000` | `9887` |
+| **05** | `9887` | `add 456 7823` | $1796.0000 + 456.0$ | `2252.0000` | `7823` |
+| **06** | `7823` | `minus 43 10456` | $2252.0000 - 43.0$ | `2209.0000` | `10456` |
+| **07** | `10456` | `divide 0.5 10457` | $2209.0000 / 0.5$ | `4418.0000` | `10457` |
+| **08** | `10457` | `add 877 40000` | $4418.0000 + 877.0$ | `5295.0000` | `40000` |
+| **09** | `40000` | `add 9 40200` | $5295.0000 + 9.0$ | `5304.0000` | `40200` |
+| **10** | `40200` | `multiply 34 8743` | $5304.0000 \times 34.0$ | `180336.0000` | `8743` |
+| **11** | `8743` | `minus 5 63890` | $180336.0000 - 5.0$ | `180331.0000` | `63890` |
+| **12** | `63890` | `divide 1 38721` | $180331.0000 / 1.0$ | `180331.0000` | `38721` |
+| **13** | `38721` | `add 43 6632` | $180331.0000 + 43.0$ | `180374.0000` | `6632` |
+| **14** | `6632` | `minus 22 29932` | $180374.0000 - 22.0$ | `180352.0000` | `29932` |
+| **15** | `29932` | `divide 3 29132` | $180352.0000 / 3.0$ | `60117.3333` | `29132` |
+| **16** | `29132` | `multiply 9 8773` | $60117.3333 \times 9.0$ | `541056.0000` | `8773` |
+| **17** | `8773` | `minus 1200 1338` | $541056.0000 - 1200.0$ | `539856.0000` | `1338` |
+| **18** | `1338` | `add 12 1876` | $539856.0000 + 12.0$ | `539868.0000` | `1876` |
+| **19** | `1876` | `divide 1 34232` | $539868.0000 / 1.0$ | `539868.0000` | `34232` |
+| **20** | `34232` | `multiply 1 6783` | $539868.0000 \times 1.0$ | `539868.0000` | `6783` |
+| **21** | `6783` | `add -100 4040` | $539868.0000 + (-100.0)$ | `539768.0000` | `4040` |
+| **22** | `4040` | `multiply -2 5050` | $539768.0000 \times (-2.0)$ | `-1079536.0000` | `5050` |
+| **23** | `5050` | `add 300 9898` | $-1079536.0000 + 300.0$ | `-1079236.0000` | `9898` |
+| **24** | `9898` | `divide 10 3232` | $-1079236.0000 / 10.0$ | `-107923.6000` | `3232` |
+| **25** | `3232` | `minus 10 10321` | $-107923.6000 - 10.0$ | `-107933.6000` | `10321` |
+| **26** | `10321` | `add 130 7709` | $-107933.6000 + 130.0$ | `-107803.6000` | `7709` |
+| **27** | `7709` | `multiply 4 9872` | $-107803.6000 \times 4.0$ | `-431214.4000` | `9872` |
+| **28** | `9872` | `multiply -12 32424` | $-431214.4000 \times (-12.0)$ | `5174572.8000` | `32424` |
+| **29** | `32424` | `divide 3 65513` | $5174572.8000 / 3.0$ | `1724857.6000` | `65513` |
+| **30** | `65513` | `minus 1000 3459` | $1724857.6000 - 1000.0$ | `1723857.6000` | `3459` |
+| **31** | `3459` | `add 23 7832` | $1723857.6000 + 23.0$ | `1723880.6000` | `7832` |
+| **32** | `7832` | `divide 5 1111` | $1723880.6000 / 5.0$ | `344776.1200` | `1111` |
+| **33** | `1111` | `minus 8 2222` | $344776.1200 - 8.0$ | `344768.1200` | `2222` |
+| **34** | `2222` | `add 1 9765` | $344768.1200 + 1.0$ | `344769.1200` | `9765` |
+| **End** | `9765` | `STOP` | *Sequence terminated* | **`344769.12`** | — |
+
+### Solution Script
+The automated Python solution is available at [`solve_task2.py`](solve_task2.py). Run using:
 
 ```bash
-#!/usr/bin/env bash
-set -euo pipefail
-
-INPUT_FILE="${1:-"b64_1550406728131.txt"}"
-
-decode_base64() {
-    base64 -d
-}
-
-# Construct a 50-stage pipeline
-cmd="cat \"$INPUT_FILE\""
-for i in {1..50}; do
-    cmd="$cmd | decode_base64"
-done
-
-final_string=$(eval "$cmd")
-echo "Final Decoded String: $final_string"
-```
-
-#### Run:
-```bash
-chmod +x solve.sh
-./solve.sh
+python3 solve_task2.py <machine_ip>
 ```
