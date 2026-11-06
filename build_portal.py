@@ -2,7 +2,8 @@
 """
 Builds the CTF TryHackMe Rooms Portal:
   - index.html: TryHackMe-themed interactive single-page app with imageURL icons,
-                difficulty filters, search, completion status, and write-ups.
+                deep multi-field search (code, title, description, tags), dynamic
+                category count updates, cross-filter alert banners, and reset controls.
   - README.md: Main repository documentation with interactive collapsible sections.
 """
 
@@ -39,6 +40,8 @@ def main():
         has_writeup = cl in local_writeups
         wu_path = local_writeups.get(cl, "")
         img_url = r.get("imageURL") or "https://tryhackme.com/static/images/logo/logo-square-white.svg"
+        desc = r.get("description") or ""
+        tags = r.get("tags") or []
 
         rooms.append({
             "code": code,
@@ -46,6 +49,9 @@ def main():
             "title": r.get("title", code),
             "difficulty": r.get("difficulty", "medium"),
             "imageURL": img_url,
+            "description": desc,
+            "tags": tags,
+            "freeToUse": bool(r.get("freeToUse", True)),
             "completed": is_completed,
             "has_writeup": has_writeup,
             "writeup_path": wu_path
@@ -57,7 +63,7 @@ def main():
     html_content = generate_thm_html(rooms)
     with open(os.path.join(CTF_DIR, "index.html"), "w", encoding="utf-8") as f:
         f.write(html_content)
-    print("Generated THM-themed index.html")
+    print("Generated upgraded THM-themed index.html")
 
     readme_content = generate_readme(rooms)
     with open(os.path.join(CTF_DIR, "README.md"), "w", encoding="utf-8") as f:
@@ -71,6 +77,9 @@ def generate_thm_html(rooms):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <title>TryHackMe Rooms Explorer | @khoiduong2913</title>
   <link rel="icon" type="image/svg+xml" href="https://tryhackme.com/static/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -174,7 +183,7 @@ def generate_thm_html(rooms):
       padding: 0 1.25rem;
     }}
     .banner {{
-      background: linear-gradient(135deg, rgba(20, 29, 43, 0.95), rgba(22, 30, 46, 0.85)), url('https://tryhackme.com/static/images/homepage/grid-dark.png');
+      background: linear-gradient(135deg, rgba(20, 29, 43, 0.95), rgba(22, 30, 46, 0.85));
       border: 1px solid var(--thm-border);
       border-radius: 12px;
       padding: 1.5rem 1.75rem;
@@ -235,6 +244,12 @@ def generate_thm_html(rooms):
     }}
     .search-row {{
       position: relative;
+      display: flex;
+      gap: 0.75rem;
+    }}
+    .search-input-wrap {{
+      position: relative;
+      flex: 1;
     }}
     .search-input {{
       width: 100%;
@@ -259,6 +274,23 @@ def generate_thm_html(rooms):
       transform: translateY(-50%);
       color: var(--thm-text-muted);
       pointer-events: none;
+    }}
+    .btn-reset {{
+      background: #1f2a3f;
+      border: 1px solid var(--thm-border);
+      color: var(--thm-text-muted);
+      padding: 0 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }}
+    .btn-reset:hover {{
+      background: #283752;
+      color: #fff;
+      border-color: var(--thm-red);
     }}
     .filter-row {{
       display: flex;
@@ -305,6 +337,35 @@ def generate_thm_html(rooms):
     .chip.active[data-diff="hard"] {{ background: #ef4444; border-color: #ef4444; color: #fff; }}
     .chip.active[data-diff="insane"] {{ background: #8b5cf6; border-color: #8b5cf6; color: #fff; }}
     .chip.active[data-diff="info"] {{ background: #06b6d4; border-color: #06b6d4; color: #0b0f19; }}
+    .chip-counter {{
+      background: rgba(0, 0, 0, 0.3);
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+    }}
+    .alert-banner {{
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: #fbbf24;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }}
+    .alert-banner button {{
+      background: #f59e0b;
+      color: #0b0f19;
+      border: none;
+      padding: 0.3rem 0.75rem;
+      border-radius: 4px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }}
     .table-container {{
       background: var(--thm-card);
       border: 1px solid var(--thm-border);
@@ -340,11 +401,6 @@ def generate_thm_html(rooms):
     tr:hover td {{
       background: var(--thm-card-hover);
     }}
-    .room-cell {{
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-    }}
     .room-thumb {{
       width: 42px;
       height: 42px;
@@ -354,11 +410,6 @@ def generate_thm_html(rooms):
       border: 1px solid var(--thm-border);
       object-fit: cover;
       padding: 2px;
-    }}
-    .room-info {{
-      display: flex;
-      flex-direction: column;
-      gap: 0.15rem;
     }}
     .room-title-link {{
       color: #fff;
@@ -394,6 +445,8 @@ def generate_thm_html(rooms):
     .badge-info {{ background: rgba(6, 182, 212, 0.15); color: #22d3ee; border: 1px solid rgba(6, 182, 212, 0.4); }}
     .badge-type-challenge {{ background: #1a2436; color: #93c5fd; border: 1px solid #2b3952; }}
     .badge-type-walkthrough {{ background: #1b2826; color: #6ee7b7; border: 1px solid #224d3e; }}
+    .badge-free {{ background: rgba(16, 185, 129, 0.12); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); }}
+    .badge-vip {{ background: rgba(245, 158, 11, 0.12); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.35); }}
     .badge-completed {{
       background: rgba(16, 185, 129, 0.2);
       color: #34d399;
@@ -525,18 +578,21 @@ def generate_thm_html(rooms):
 
     <div class="controls-panel">
       <div class="search-row">
-        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input type="text" id="search-input" class="search-input" placeholder="Search by room title, code slug, or type (e.g. pcap, buffer overflow, dfir, web)...">
+        <div class="search-input-wrap">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" id="search-input" class="search-input" placeholder="Search by title, code (e.g. blockroom), tags (smb, forensics, buffer overflow), or description...">
+        </div>
+        <button class="btn-reset" id="btn-reset-filters">Reset Filters</button>
       </div>
 
       <div class="filter-row">
         <span class="filter-label">Difficulty:</span>
-        <button class="chip active" data-diff="all">All (1,402)</button>
-        <button class="chip" data-diff="easy">🟢 Easy (631)</button>
-        <button class="chip" data-diff="medium">🟡 Medium (618)</button>
-        <button class="chip" data-diff="hard">🔴 Hard (113)</button>
-        <button class="chip" data-diff="insane">🟣 Insane (9)</button>
-        <button class="chip" data-diff="info">ℹ️ Info (31)</button>
+        <button class="chip active" data-diff="all">All <span class="chip-counter" id="count-all">1402</span></button>
+        <button class="chip" data-diff="easy">🟢 Easy <span class="chip-counter" id="count-easy">631</span></button>
+        <button class="chip" data-diff="medium">🟡 Medium <span class="chip-counter" id="count-medium">618</span></button>
+        <button class="chip" data-diff="hard">🔴 Hard <span class="chip-counter" id="count-hard">113</span></button>
+        <button class="chip" data-diff="insane">🟣 Insane <span class="chip-counter" id="count-insane">9</span></button>
+        <button class="chip" data-diff="info">ℹ️ Info <span class="chip-counter" id="count-info">31</span></button>
       </div>
 
       <div class="filter-row">
@@ -551,6 +607,11 @@ def generate_thm_html(rooms):
         <button class="chip active" data-wu="all">All Rooms</button>
         <button class="chip" data-wu="yes">📝 Has Write-Up in Repo (12)</button>
       </div>
+    </div>
+
+    <div id="alert-banner" class="alert-banner">
+      <span id="alert-text">Notice: matches exist in other categories.</span>
+      <button id="alert-btn">Show All Difficulties</button>
     </div>
 
     <div class="table-container">
@@ -598,21 +659,61 @@ def generate_thm_html(rooms):
 
     const fallbackImg = "https://tryhackme.com/static/images/favicon.png";
 
+    function roomMatchesSearch(r, q) {{
+      if (!q) return true;
+      if (r.title.toLowerCase().includes(q)) return true;
+      if (r.code.toLowerCase().includes(q)) return true;
+      if (r.type.toLowerCase().includes(q)) return true;
+      if (r.description && r.description.toLowerCase().includes(q)) return true;
+      if (r.tags && r.tags.some(t => t.toLowerCase().includes(q))) return true;
+      return false;
+    }}
+
+    function updateCounters() {{
+      const q = searchQuery.toLowerCase().trim();
+      const counts = {{ all: 0, easy: 0, medium: 0, hard: 0, insane: 0, info: 0 }};
+      
+      rooms.forEach(r => {{
+        if (currentComp === 'yes' && !r.completed) return;
+        if (currentComp === 'no' && r.completed) return;
+        if (currentWu === 'yes' && !r.has_writeup) return;
+        if (!roomMatchesSearch(r, q)) return;
+
+        counts.all++;
+        const d = (r.difficulty || '').toLowerCase();
+        if (counts.hasOwnProperty(d)) {{
+          counts[d]++;
+        }}
+      }});
+
+      for (const k in counts) {{
+        const el = document.getElementById('count-' + k);
+        if (el) el.innerText = counts[k].toLocaleString();
+      }}
+
+      // Check cross-category alert
+      const alertBanner = document.getElementById('alert-banner');
+      if (searchQuery && currentDifficulty !== 'all' && counts[currentDifficulty] === 0 && counts.all > 0) {{
+        document.getElementById('alert-text').innerHTML = `Found <strong>${{counts.all}}</strong> matching room(s) in other difficulty categories!`;
+        alertBanner.style.display = 'flex';
+      }} else {{
+        alertBanner.style.display = 'none';
+      }}
+    }}
+
     function filterRooms() {{
+      const q = searchQuery.toLowerCase().trim();
       return rooms.filter(r => {{
         if (currentDifficulty !== 'all' && r.difficulty.toLowerCase() !== currentDifficulty) return false;
         if (currentComp === 'yes' && !r.completed) return false;
         if (currentComp === 'no' && r.completed) return false;
         if (currentWu === 'yes' && !r.has_writeup) return false;
-        if (searchQuery) {{
-          const q = searchQuery.toLowerCase();
-          return r.title.toLowerCase().includes(q) || r.code.toLowerCase().includes(q) || r.type.toLowerCase().includes(q);
-        }}
-        return true;
+        return roomMatchesSearch(r, q);
       }});
     }}
 
     function renderTable() {{
+      updateCounters();
       const filtered = filterRooms();
       document.getElementById('stat-filtered-val').innerText = filtered.length.toLocaleString();
 
@@ -627,7 +728,7 @@ def generate_thm_html(rooms):
       tbody.innerHTML = '';
 
       if (filtered.length === 0) {{
-        tbody.innerHTML = `<tr><td colspan="7" class="empty-state">No TryHackMe rooms found matching your current filter.</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="7" class="empty-state">No TryHackMe rooms found matching your current filter. Try clicking "Reset Filters" or switching Difficulty to "All".</td></tr>`;
         document.getElementById('page-summary-text').innerText = '0 rooms found';
         document.getElementById('prev-page-btn').disabled = true;
         document.getElementById('next-page-btn').disabled = true;
@@ -644,6 +745,10 @@ def generate_thm_html(rooms):
           ? '<span class="badge badge-completed"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Completed</span>' 
           : '<span class="badge badge-incomplete">Incomplete</span>';
 
+        const tierHtml = r.freeToUse 
+          ? '<span class="badge badge-free" title="Free Room">Free</span>' 
+          : '<span class="badge badge-vip" title="VIP / Subscription Room">VIP</span>';
+
         const wuHtml = r.has_writeup 
           ? `<a class="btn-writeup" href="${{r.writeup_path}}"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Writeup</a>` 
           : '<span style="color: var(--thm-text-dark); font-size: 0.8rem;">No</span>';
@@ -655,7 +760,12 @@ def generate_thm_html(rooms):
             <img class="room-thumb" src="${{safeImg}}" alt="${{r.code}}" loading="lazy" onerror="this.onerror=null;this.src='${{fallbackImg}}';">
           </td>
           <td><code class="room-code-badge">${{r.code}}</code></td>
-          <td><span class="badge ${{typeClass}}">${{r.type}}</span></td>
+          <td>
+            <div style="display: inline-flex; gap: 0.35rem; align-items: center; flex-wrap: wrap;">
+              <span class="badge ${{typeClass}}">${{r.type}}</span>
+              ${{tierHtml}}
+            </div>
+          </td>
           <td>
             <a class="room-title-link" href="https://tryhackme.com/r/room/${{r.code}}" target="_blank" rel="noopener">
               ${{r.title}}
@@ -708,7 +818,35 @@ def generate_thm_html(rooms):
     }});
 
     document.getElementById('search-input').addEventListener('input', (e) => {{
-      searchQuery = e.target.value.trim();
+      searchQuery = e.target.value;
+      currentPage = 1;
+      renderTable();
+    }});
+
+    document.getElementById('btn-reset-filters').addEventListener('click', () => {{
+      currentDifficulty = 'all';
+      currentComp = 'all';
+      currentWu = 'all';
+      searchQuery = '';
+      document.getElementById('search-input').value = '';
+      
+      document.querySelectorAll('[data-diff]').forEach(b => b.classList.remove('active'));
+      document.querySelector('[data-diff="all"]').classList.add('active');
+
+      document.querySelectorAll('[data-comp]').forEach(b => b.classList.remove('active'));
+      document.querySelector('[data-comp="all"]').classList.add('active');
+
+      document.querySelectorAll('[data-wu]').forEach(b => b.classList.remove('active'));
+      document.querySelector('[data-wu="all"]').classList.add('active');
+
+      currentPage = 1;
+      renderTable();
+    }});
+
+    document.getElementById('alert-btn').addEventListener('click', () => {{
+      currentDifficulty = 'all';
+      document.querySelectorAll('[data-diff]').forEach(b => b.classList.remove('active'));
+      document.querySelector('[data-diff="all"]').classList.add('active');
       currentPage = 1;
       renderTable();
     }});
