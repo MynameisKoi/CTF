@@ -4,7 +4,7 @@
 
 - **TryHackMe Username**: `khoiduong2913` (`644ac05fbd4b3a0055223e91`)
 - **Total Rooms in Catalog**: `1665`
-- **Completed Rooms**: `461`
+- **Completed Rooms**: `462`
 - **Rooms with Local Write-Up**: `13`
 - **Full Dataset (All 26 Room Parameters + 2 Status Columns)**: [`thm_rooms_khoiduong2913.csv`](./thm_rooms_khoiduong2913.csv)
 

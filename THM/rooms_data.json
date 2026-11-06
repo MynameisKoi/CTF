@@ -462,7 +462,8 @@
     "hh-afterhours-b090d1f0",
     "agentbuilding",
     "handbookfortherecentlycompromised",
-    "thewaitingroom"
+    "thewaitingroom",
+    "blockroom"
   ],
   "rooms": [
     {
@@ -891,7 +892,7 @@
       "code": "proxymeeting",
       "collaborator": [],
       "contentDropPriority": 0,
-      "description": "Your payment is frozen and the AI assistant won’t help. Find a way to get it released.",
+      "description": "Your payment is frozen and the AI assistant won\u2019t help. Find a way to get it released.",
       "difficulty": "medium",
       "difficultyLevel": 3,
       "flags": {
@@ -3873,7 +3874,7 @@
       "code": "phantomfob",
       "collaborator": [],
       "contentDropPriority": 0,
-      "description": "The fob locks but won’t unlock. Codes change every second, forge the signal; don’t replay it.",
+      "description": "The fob locks but won\u2019t unlock. Codes change every second, forge the signal; don\u2019t replay it.",
       "difficulty": "medium",
       "difficultyLevel": 3,
       "flags": {
@@ -10294,7 +10295,7 @@
       "code": "xssintroduction",
       "collaborator": [],
       "contentDropPriority": 0,
-      "description": "Learn to detect and exploit XSS to control visitors’ browsers.",
+      "description": "Learn to detect and exploit XSS to control visitors\u2019 browsers.",
       "difficulty": "medium",
       "difficultyLevel": 3,
       "flags": {
@@ -11200,7 +11201,7 @@
       "timeToComplete": 45,
       "code": "checkmate",
       "title": "Checkmate",
-      "description": "Exploit weak password practices across Marco’s internal systems to achieve full compromise.",
+      "description": "Exploit weak password practices across Marco\u2019s internal systems to achieve full compromise.",
       "imageURL": "https://cdn-images.tryhackme.com/room-icons/691e303c8bb7e99b93a58132-1776092645498",
       "difficultyLevel": 2,
       "published": "2026-05-15T18:00:03.035Z",
@@ -12313,7 +12314,7 @@
         "Blue",
         "Artificial Intelligence",
         "LLM",
-        "MITRE ATT&CK® Navigator",
+        "MITRE ATT&CK\u00ae Navigator",
         "segment 2.5",
         "AI Pentesting",
         "Artificial intelligence"
@@ -12332,7 +12333,7 @@
         "Artificial intelligence"
       ],
       "toolTags": [
-        "MITRE ATT&CK® Navigator"
+        "MITRE ATT&CK\u00ae Navigator"
       ],
       "subscriptionTier": "free"
     },
@@ -12512,7 +12513,7 @@
       "timeToComplete": 60,
       "code": "jailbreaking",
       "title": "Jailbreaking",
-      "description": "Explore jailbreaking techniques to bypass an AI model’s safety and policy restrictions.",
+      "description": "Explore jailbreaking techniques to bypass an AI model\u2019s safety and policy restrictions.",
       "imageURL": "https://cdn-images.tryhackme.com/room-icons/6228f0d4ca8e57005149c3e3-1775757147457",
       "difficultyLevel": 3,
       "published": "2026-04-13T15:00:26.916Z",
@@ -15839,7 +15840,7 @@
       "timeToComplete": 30,
       "code": "obfuscation-aoc2025-e5r8t2y6u9",
       "title": "Obfuscation - The Egg Shell File",
-      "description": "McSkidy keeps her focus on a particular alert that caught her interest: an email posing as northpole-hr.",
+      "description": "McSkidy keeps her focus on a particular alert that caught her interest: an\u00a0email posing as\u00a0northpole-hr.",
       "imageURL": "https://cdn-images.tryhackme.com/room-icons/5f9c7574e201fe31dad228fc-1763962163689",
       "difficultyLevel": 3,
       "published": "2025-12-18T16:00:02.752Z",
@@ -15868,7 +15869,7 @@
       "timeToComplete": 60,
       "code": "sq3-aoc2025-bk3vvbcgiT",
       "title": "Carrotbane of My Existence",
-      "description": "Hopper’s uprising is just getting started.",
+      "description": "Hopper\u2019s uprising is just getting started.",
       "imageURL": "https://cdn-images.tryhackme.com/room-icons/5ed5961c6276df568891c3ea-1764600340818",
       "difficultyLevel": 3,
       "published": "2025-12-17T16:00:02.653Z",
@@ -16508,7 +16509,7 @@
       "noUsers": 59536,
       "timeToComplete": 45,
       "code": "idor-aoc2025-zl6MywQid9",
-      "title": "IDOR - Santa’s Little IDOR",
+      "title": "IDOR - Santa\u2019s Little IDOR",
       "description": "Learn about IDOR while helping pentest the TrypresentMe website.",
       "imageURL": "https://cdn-images.tryhackme.com/room-icons/66c44fd9733427ea1181ad58-1761823903831",
       "difficultyLevel": 3,
@@ -17003,7 +17004,7 @@
         "Burp Suite",
         "Python",
         "WAF",
-        "explotación web",
+        "explotaci\u00f3n web",
         "segment 2",
         "segment 2.5",
         "Web application security"
@@ -21544,7 +21545,7 @@
       "timeToComplete": 90,
       "code": "apt28inthesnare",
       "title": "APT28 in the Snare",
-      "description": "Engage in a hands-on investigation tracing Fancy Bear’s intrusion chain.",
+      "description": "Engage in a hands-on investigation tracing Fancy Bear\u2019s intrusion chain.",
       "imageURL": "https://cdn-images.tryhackme.com/room-icons/674d9727a22822c1eb46cb31-1747669913771",
       "difficultyLevel": 3,
       "published": "2025-05-22T15:00:03.013Z",
@@ -31091,7 +31092,7 @@
       "timeToComplete": 60,
       "code": "exfilibur",
       "title": "Exfilibur",
-      "description": "You’ve been asked to exploit all the vulnerabilities present.",
+      "description": "You\u2019ve been asked to exploit all the vulnerabilities present.",
       "imageURL": "https://cdn-images.tryhackme.com/room-icons/ec6a4ab94c6bf994398938839bce48ab.png",
       "published": "2024-02-23T19:00:00.227Z",
       "difficultyLevel": 4,
@@ -32286,7 +32287,7 @@
       "timeToComplete": 60,
       "code": "avenger",
       "title": "AVenger",
-      "description": "You’ve been asked to exploit all the vulnerabilities present.",
+      "description": "You\u2019ve been asked to exploit all the vulnerabilities present.",
       "imageURL": "https://cdn-images.tryhackme.com/room-icons/07fe26c8113c521c23f979ce7829147a.png",
       "published": "2023-11-24T19:00:00.487Z",
       "difficultyLevel": 3,
@@ -37948,7 +37949,7 @@
       "timeToComplete": 60,
       "code": "lookback",
       "title": "Lookback",
-      "description": "You’ve been asked to run a vulnerability test on a production environment.",
+      "description": "You\u2019ve been asked to run a vulnerability test on a production environment.",
       "imageURL": "https://cdn-images.tryhackme.com/room-icons/d8877bf37d4015f1b78d243078dece09.png",
       "published": "2023-03-17T19:00:00.138Z",
       "difficultyLevel": 2,
@@ -46256,7 +46257,7 @@
       "timeToComplete": 130,
       "code": "squidgameroom",
       "title": "Squid Game",
-      "description": "오징어 게임",
+      "description": "\uc624\uc9d5\uc5b4 \uac8c\uc784",
       "imageURL": "https://cdn-images.tryhackme.com/room-icons/08284eeb72ad634c1678330ade91edc7.png",
       "published": "2021-11-11T19:00:00.280Z",
       "difficultyLevel": 4,
@@ -48875,7 +48876,7 @@
         "reverse engineering",
         "Incident response",
         "mobsf",
-        "MITRE ATT&CK® Navigator",
+        "MITRE ATT&CK\u00ae Navigator",
         "virustotal",
         "Windows"
       ],
@@ -48894,7 +48895,7 @@
         "Windows"
       ],
       "toolTags": [
-        "MITRE ATT&CK® Navigator"
+        "MITRE ATT&CK\u00ae Navigator"
       ],
       "subscriptionTier": "free"
     },
@@ -54656,10 +54657,10 @@
         "Web",
         "Purple",
         "mitre",
-        "MITRE ATT&CK® Navigator",
+        "MITRE ATT&CK\u00ae Navigator",
         "CTID",
         "Adversary Emulation Library",
-        "ATT&CK® Emulation Plans",
+        "ATT&CK\u00ae Emulation Plans",
         "segment 1",
         "segment 2",
         "segment 2.5"
@@ -54681,10 +54682,10 @@
         "Web"
       ],
       "toolTags": [
-        "ATT&CK® Emulation Plans",
+        "ATT&CK\u00ae Emulation Plans",
         "Adversary Emulation Library",
         "CTID",
-        "MITRE ATT&CK® Navigator"
+        "MITRE ATT&CK\u00ae Navigator"
       ],
       "subscriptionTier": "premium"
     },
@@ -59007,7 +59008,7 @@
     {
       "_id": "5e987e575b60d808536bedff",
       "imageURL": "https://cdn-images.tryhackme.com/room-icons/a79403d9956a39a6faedbf2f7e02d631.png",
-      "description": "‌‌‌‌‍﻿‌‌Hmm‌‌‌‌‍‬‌‍‌‌‌‌‍﻿‌﻿‌‌‌‌‍﻿‌﻿‌‌‌‌‍﻿‍﻿‌‌‌‌‍‬﻿﻿‌‌‌‌‍﻿‌‬‌‌‌‌‍‬‍‌‌‌‌‌‌‬‌‌‌‌‌‌‍‬‬‍‌‌‌‌‍﻿‌﻿‌‌‌‌‌‬‌‌‌‌‌‌‍‬‬‌‌‌‌‌‍‬‌‍‌‌‌‌‍‬‬‌‌‌‌‌‍‬‌‍‌‌‌‌‍‬‍‍‌‌‌‌‍﻿‬‬‌‌‌‌‍﻿‌‌‌‌‌‌‍﻿‬‬",
+      "description": "\u200c\u200c\u200c\u200c\u200d\ufeff\u200c\u200cHmm\u200c\u200c\u200c\u200c\u200d\u202c\u200c\u200d\u200c\u200c\u200c\u200c\u200d\ufeff\u200c\ufeff\u200c\u200c\u200c\u200c\u200d\ufeff\u200c\ufeff\u200c\u200c\u200c\u200c\u200d\ufeff\u200d\ufeff\u200c\u200c\u200c\u200c\u200d\u202c\ufeff\ufeff\u200c\u200c\u200c\u200c\u200d\ufeff\u200c\u202c\u200c\u200c\u200c\u200c\u200d\u202c\u200d\u200c\u200c\u200c\u200c\u200c\u200c\u202c\u200c\u200c\u200c\u200c\u200c\u200c\u200d\u202c\u202c\u200d\u200c\u200c\u200c\u200c\u200d\ufeff\u200c\ufeff\u200c\u200c\u200c\u200c\u200c\u202c\u200c\u200c\u200c\u200c\u200c\u200c\u200d\u202c\u202c\u200c\u200c\u200c\u200c\u200c\u200d\u202c\u200c\u200d\u200c\u200c\u200c\u200c\u200d\u202c\u202c\u200c\u200c\u200c\u200c\u200c\u200d\u202c\u200c\u200d\u200c\u200c\u200c\u200c\u200d\u202c\u200d\u200d\u200c\u200c\u200c\u200c\u200d\ufeff\u202c\u202c\u200c\u200c\u200c\u200c\u200d\ufeff\u200c\u200c\u200c\u200c\u200c\u200c\u200d\ufeff\u202c\u202c",
       "title": "The Impossible Challenge",
       "code": "theimpossiblechallenge",
       "difficulty": "medium",
@@ -64957,7 +64958,7 @@
       "timeToComplete": 120,
       "code": "bandit",
       "title": "Bandit",
-      "description": "You’ve been asked to exploit all the vulnerabilities on multiple systems.",
+      "description": "You\u2019ve been asked to exploit all the vulnerabilities on multiple systems.",
       "imageURL": "https://cdn-images.tryhackme.com/room-icons/602513b69ffd0bb6e7d2dd7899816661.png",
       "published": "2023-10-13T18:00:00.553Z",
       "difficultyLevel": 4,
@@ -65599,7 +65600,7 @@
       "_id": "6a0335886732b08c032e47c2",
       "collaborator": [],
       "contentDropPriority": 0,
-      "description": "This module is the capstone of the path. Four full-scope challenges put every skill you’ve built into action against environments designed to mirror real penetration tests, with no guided walkthroughs to lean on. You’ll move from reconnaissance through exploitation, privilege escalation, and lateral movement on your own, working through targets that get progressively more demanding as you go. Completing them proves you’re ready to operate at the junior pentester level.",
+      "description": "This module is the capstone of the path. Four full-scope challenges put every skill you\u2019ve built into action against environments designed to mirror real penetration tests, with no guided walkthroughs to lean on. You\u2019ll move from reconnaissance through exploitation, privilege escalation, and lateral movement on your own, working through targets that get progressively more demanding as you go. Completing them proves you\u2019re ready to operate at the junior pentester level.",
       "difficulty": "medium",
       "difficultyLevel": 2,
       "flags": {
@@ -65620,7 +65621,7 @@
       "_id": "6a07f24afb98b86f7ef2daf9",
       "collaborator": [],
       "contentDropPriority": 0,
-      "description": "This module drops you straight into the action with two guided engagements: one against a web application and one against a vulnerable machine. You’ll walk through each attack from reconnaissance to exploitation, see how the cyber kill chain structures attacker thinking, and meet the industry-standard frameworks that shape professional engagements. By the end, you’ll have the working mental model every penetration test relies on.",
+      "description": "This module drops you straight into the action with two guided engagements: one against a web application and one against a vulnerable machine. You\u2019ll walk through each attack from reconnaissance to exploitation, see how the cyber kill chain structures attacker thinking, and meet the industry-standard frameworks that shape professional engagements. By the end, you\u2019ll have the working mental model every penetration test relies on.",
       "difficulty": "medium",
       "difficultyLevel": 2,
       "flags": {
@@ -65641,7 +65642,7 @@
       "_id": "6a07fd5cce8de37f37ad1fd3",
       "collaborator": [],
       "contentDropPriority": 0,
-      "description": "Reconnaissance is where every engagement begins, and this module covers both halves. You’ll start with passive techniques that mine public records, search engines, and DNS data without ever touching the target, then move into active probing with classic network utilities to map live systems. From there, you’ll work through the everyday protocols and services that keep networks running, learning how each one behaves and how attackers turn its quirks against it.",
+      "description": "Reconnaissance is where every engagement begins, and this module covers both halves. You\u2019ll start with passive techniques that mine public records, search engines, and DNS data without ever touching the target, then move into active probing with classic network utilities to map live systems. From there, you\u2019ll work through the everyday protocols and services that keep networks running, learning how each one behaves and how attackers turn its quirks against it.",
       "difficulty": "medium",
       "difficultyLevel": 2,
       "flags": {
@@ -65662,7 +65663,7 @@
       "_id": "6a08056cfe7a091fcaa12abc",
       "collaborator": [],
       "contentDropPriority": 0,
-      "description": "This module opens your web application testing journey by teaching you to walk through a target the way an attacker does, surfacing the hidden pages, directories, and files that ordinary users never see. You’ll then dig into the modern stacks that power today’s sites, understanding how frontend frameworks, APIs, and backend technologies each introduce their own attack surface. By the end, you’ll be running practical web server attacks and reading them through a pentester’s lens.",
+      "description": "This module opens your web application testing journey by teaching you to walk through a target the way an attacker does, surfacing the hidden pages, directories, and files that ordinary users never see. You\u2019ll then dig into the modern stacks that power today\u2019s sites, understanding how frontend frameworks, APIs, and backend technologies each introduce their own attack surface. By the end, you\u2019ll be running practical web server attacks and reading them through a pentester\u2019s lens.",
       "difficulty": "medium",
       "difficultyLevel": 3,
       "flags": {
@@ -65683,7 +65684,7 @@
       "_id": "6a080618406ae03169035bf3",
       "collaborator": [],
       "contentDropPriority": 0,
-      "description": "This module walks you through five of the most impactful vulnerabilities in modern web applications, examining how each works, why it persists, and how attackers exploit it in the wild. You’ll start with the classics, SQL injection and cross-site scripting, before moving to subtler bugs like CSRF, SSRF, and IDOR that often slip past even experienced developers. A final hands-on challenge brings all the techniques together, so you finish the module able to spot these issues quickly and exploit them with confidence.",
+      "description": "This module walks you through five of the most impactful vulnerabilities in modern web applications, examining how each works, why it persists, and how attackers exploit it in the wild. You\u2019ll start with the classics, SQL injection and cross-site scripting, before moving to subtler bugs like CSRF, SSRF, and IDOR that often slip past even experienced developers. A final hands-on challenge brings all the techniques together, so you finish the module able to spot these issues quickly and exploit them with confidence.",
       "difficulty": "medium",
       "difficultyLevel": 2,
       "flags": {
@@ -65704,7 +65705,7 @@
       "_id": "6a080679c6c87af28207001d",
       "collaborator": [],
       "contentDropPriority": 0,
-      "description": "This module takes your web hacking beyond the classics into the vulnerabilities that turn small oversights into full-system compromises. You’ll begin with the mechanics of session management and authentication, then move on to server-side attacks such as directory traversal and command injection, and finish with the rapidly expanding attack surface of modern APIs. A live security challenge closes the module, so the techniques are battle-tested before you carry them into the rest of the path.",
+      "description": "This module takes your web hacking beyond the classics into the vulnerabilities that turn small oversights into full-system compromises. You\u2019ll begin with the mechanics of session management and authentication, then move on to server-side attacks such as directory traversal and command injection, and finish with the rapidly expanding attack surface of modern APIs. A live security challenge closes the module, so the techniques are battle-tested before you carry them into the rest of the path.",
       "difficulty": "medium",
       "difficultyLevel": 2,
       "flags": {
@@ -65725,7 +65726,7 @@
       "_id": "6a0806dc633b566f2e1dfc4c",
       "collaborator": [],
       "contentDropPriority": 0,
-      "description": "This module is about how penetration testers stay ahead of the curve, starting with the public vulnerability databases (CVE, NVD, vendor advisories) that catalog every known weakness in modern software. You’ll then move into the scanning tools that do the heavy lifting at scale, before picking up the manual identification techniques that turn raw scanner output into reliable, actionable findings. By the end, you’ll know how to research a CVE from first principles and validate whether it actually applies to a target.",
+      "description": "This module is about how penetration testers stay ahead of the curve, starting with the public vulnerability databases (CVE, NVD, vendor advisories) that catalog every known weakness in modern software. You\u2019ll then move into the scanning tools that do the heavy lifting at scale, before picking up the manual identification techniques that turn raw scanner output into reliable, actionable findings. By the end, you\u2019ll know how to research a CVE from first principles and validate whether it actually applies to a target.",
       "difficulty": "medium",
       "difficultyLevel": 2,
       "flags": {
@@ -65746,7 +65747,7 @@
       "_id": "6a08075601bd36382e66d682",
       "collaborator": [],
       "contentDropPriority": 0,
-      "description": "This module steps into the attacker’s playbook for stealing and cracking credentials, opening with phishing, the social engineering classic that still catches cautious users off guard. From there, you’ll run online attacks with Hydra, build custom wordlists tailored to a target, and use them to crack captured password hashes offline. A live password challenge closes the module, putting every technique into a realistic credential attack chain.",
+      "description": "This module steps into the attacker\u2019s playbook for stealing and cracking credentials, opening with phishing, the social engineering classic that still catches cautious users off guard. From there, you\u2019ll run online attacks with Hydra, build custom wordlists tailored to a target, and use them to crack captured password hashes offline. A live password challenge closes the module, putting every technique into a realistic credential attack chain.",
       "difficulty": "medium",
       "difficultyLevel": 2,
       "flags": {
@@ -65767,7 +65768,7 @@
       "_id": "6a0807c2633b566f2e1e4921",
       "collaborator": [],
       "contentDropPriority": 0,
-      "description": "This module covers exploitation from two complementary angles: Metasploit, the framework that powers countless real-world engagements, and the manual craft that underpins it. You’ll work through Metasploit from the ground up, learning to scan for vulnerabilities, exploit live systems, run post-exploitation modules, and generate custom payloads with msfvenom. From there, you’ll move beyond the framework to build your own shells, listeners, and payloads from scratch, so you can weaponize an exploit whether a framework is on the table or not.",
+      "description": "This module covers exploitation from two complementary angles: Metasploit, the framework that powers countless real-world engagements, and the manual craft that underpins it. You\u2019ll work through Metasploit from the ground up, learning to scan for vulnerabilities, exploit live systems, run post-exploitation modules, and generate custom payloads with msfvenom. From there, you\u2019ll move beyond the framework to build your own shells, listeners, and payloads from scratch, so you can weaponize an exploit whether a framework is on the table or not.",
       "difficulty": "medium",
       "difficultyLevel": 3,
       "flags": {
@@ -65788,7 +65789,7 @@
       "_id": "6a08648eb2d3a4c90ca7a215",
       "collaborator": [],
       "contentDropPriority": 0,
-      "description": "Active Directory sits at the heart of nearly every corporate network, which makes it one of the most valuable targets in any engagement. This module takes you behind the scenes, starting with how AD authentication actually works under the hood before walking through the full attack chain: breaching the domain, enumerating users and machines, harvesting credentials, and moving laterally to expand your foothold. Two live AD challenges close the module, so the full chain is something you’ve executed end to end.",
+      "description": "Active Directory sits at the heart of nearly every corporate network, which makes it one of the most valuable targets in any engagement. This module takes you behind the scenes, starting with how AD authentication actually works under the hood before walking through the full attack chain: breaching the domain, enumerating users and machines, harvesting credentials, and moving laterally to expand your foothold. Two live AD challenges close the module, so the full chain is something you\u2019ve executed end to end.",
       "difficulty": "medium",
       "difficultyLevel": 3,
       "flags": {
@@ -65809,7 +65810,7 @@
       "_id": "6a08652401872a6203e3f1db",
       "collaborator": [],
       "contentDropPriority": 0,
-      "description": "This module branches out beyond the core pentesting path into the specialized domains shaping modern cyber security. You’ll explore wireless, mobile, and cloud security to see how each environment introduces its own attack surface, step into the rapidly emerging world of LLM pentesting, and shift perspective to see how defenders tackle the same problems through the blue team lens and DevSecOps practices. By the end, you’ll have a clear picture of where the field is going and which specialization might be right for you.",
+      "description": "This module branches out beyond the core pentesting path into the specialized domains shaping modern cyber security. You\u2019ll explore wireless, mobile, and cloud security to see how each environment introduces its own attack surface, step into the rapidly emerging world of LLM pentesting, and shift perspective to see how defenders tackle the same problems through the blue team lens and DevSecOps practices. By the end, you\u2019ll have a clear picture of where the field is going and which specialization might be right for you.",
       "difficulty": "medium",
       "difficultyLevel": 3,
       "flags": {
@@ -65830,7 +65831,7 @@
       "_id": "6a08657c4d93c32d26965396",
       "collaborator": [],
       "contentDropPriority": 0,
-      "description": "Python is the go-to scripting language for penetration testers and the engine behind countless security tools used in the wild, and this module takes you from zero to writing your own. You’ll start with a guided demo to get a feel for the language, move into core programming concepts (variables, control flow, functions, data structures), and build your first standalone scripts. The module finishes with scripts tailored to real pentesting work, so the language becomes a tool you can actually reach for on an engagement.",
+      "description": "Python is the go-to scripting language for penetration testers and the engine behind countless security tools used in the wild, and this module takes you from zero to writing your own. You\u2019ll start with a guided demo to get a feel for the language, move into core programming concepts (variables, control flow, functions, data structures), and build your first standalone scripts. The module finishes with scripts tailored to real pentesting work, so the language becomes a tool you can actually reach for on an engagement.",
       "difficulty": "medium",
       "difficultyLevel": 2,
       "flags": {
@@ -65851,7 +65852,7 @@
       "_id": "6a08661232c990a608a66e57",
       "collaborator": [],
       "contentDropPriority": 0,
-      "description": "This module covers the professional workflow that turns hacking skills into a real engagement. You’ll start with threat modeling and scoping, the planning work that happens before a single tool runs, then move into writing clear, actionable pentest reports that communicate findings to both technical and non-technical audiences. The module closes with the re-testing process, which verifies remediations and signs an engagement off, leaving you with an end-to-end view of how professional pentests are actually delivered.",
+      "description": "This module covers the professional workflow that turns hacking skills into a real engagement. You\u2019ll start with threat modeling and scoping, the planning work that happens before a single tool runs, then move into writing clear, actionable pentest reports that communicate findings to both technical and non-technical audiences. The module closes with the re-testing process, which verifies remediations and signs an engagement off, leaving you with an end-to-end view of how professional pentests are actually delivered.",
       "difficulty": "medium",
       "difficultyLevel": 3,
       "flags": {
@@ -65872,7 +65873,7 @@
       "_id": "6a0d4361b2a4a07aeb988248",
       "collaborator": [],
       "contentDropPriority": 0,
-      "description": "This module is about turning a foothold into full control of a system. You’ll begin with host configuration reviews, learning to spot the misconfigurations that make privilege escalation possible in the first place, then dig into Linux privesc through manual enumeration, common vectors, and automated tooling. From there, you’ll cross into the very different world of Windows privilege escalation, before two live challenges put every technique into practice across both operating systems.",
+      "description": "This module is about turning a foothold into full control of a system. You\u2019ll begin with host configuration reviews, learning to spot the misconfigurations that make privilege escalation possible in the first place, then dig into Linux privesc through manual enumeration, common vectors, and automated tooling. From there, you\u2019ll cross into the very different world of Windows privilege escalation, before two live challenges put every technique into practice across both operating systems.",
       "difficulty": "medium",
       "flags": {
         "isAzureContent": false
@@ -66501,7 +66502,7 @@
       "code": "jrpenetrationtester-legacy",
       "collaborator": [],
       "contentDropPriority": 0,
-      "description": "<p>This path has been replaced by the new “Jr Penetration Tester“ learning path. Please enrol in the updated version.</p>",
+      "description": "<p>This path has been replaced by the new \u201cJr Penetration Tester\u201c learning path. Please enrol in the updated version.</p>",
       "difficulty": "intermediate",
       "difficultyLevel": 4,
       "flags": {
@@ -67196,7 +67197,7 @@
       "code": "blackcat",
       "type": "challenge",
       "title": "BlackCat",
-      "description": "BlackCat claims to have breached your company and posted proof on their leak site. As the SOC analyst on call, it’s your job to investigate. Follow the trail, uncover what happened, and confirm how deep the compromise goes before time runs out.",
+      "description": "BlackCat claims to have breached your company and posted proof on their leak site. As the SOC analyst on call, it\u2019s your job to investigate. Follow the trail, uncover what happened, and confirm how deep the compromise goes before time runs out.",
       "imageURL": "https://cdn.sanity.io/images/bwq4c255/production/86d50109163f06c09ba66a47c56f66dd0ec6a798-650x702.png",
       "published": "2025-05-19T18:46:02.000Z",
       "freeToUse": true,
@@ -67224,7 +67225,7 @@
       "code": "costly-clouds",
       "type": "challenge",
       "title": "Costly Clouds",
-      "description": "A sudden burst of AWS activity raises internal alarms. What looks like a standard autoscaling event soon reveals signs of GUI-Vil—a real-world threat actor known for credential abuse, stealthy persistence, and turning cloud infrastructure into a cryptojacking machine. Their goal? Make the cloud rain crypto. Their tactics mimic legitimate activity, making them difficult to spot. But the logs hold their fingerprints: can you spot them?",
+      "description": "A sudden burst of AWS activity raises internal alarms. What looks like a standard autoscaling event soon reveals signs of GUI-Vil\u2014a real-world threat actor known for credential abuse, stealthy persistence, and turning cloud infrastructure into a cryptojacking machine. Their goal? Make the cloud rain crypto. Their tactics mimic legitimate activity, making them difficult to spot. But the logs hold their fingerprints: can you spot them?",
       "imageURL": "https://cdn.sanity.io/images/bwq4c255/production/692e74453fcbe0e59333028d48f01edcccab1347-650x650.png",
       "published": "2025-04-10T02:31:44.000Z",
       "freeToUse": true,
@@ -67308,7 +67309,7 @@
       "code": "open-door",
       "type": "challenge",
       "title": "Open Door",
-      "description": "Our SOC team received a notification from a threat intelligence platform regarding leaked credentials for RDP access to the workstations of two employees, Amelia Wilson and William Brown, at our client, TryHatMe. These credentials were discovered on a dark web marketplace. Our team is already in the process of notifying the client about this activity and providing recommendations for next steps. But no one knows what might happen in the meantime…",
+      "description": "Our SOC team received a notification from a threat intelligence platform regarding leaked credentials for RDP access to the workstations of two employees, Amelia Wilson and William Brown, at our client, TryHatMe. These credentials were discovered on a dark web marketplace. Our team is already in the process of notifying the client about this activity and providing recommendations for next steps. But no one knows what might happen in the meantime\u2026",
       "imageURL": "https://cdn.sanity.io/images/bwq4c255/production/b6b2313b98492b3683f2d3a2322ae87e21a2c4f7-638x384.png",
       "published": "2025-01-08T15:28:04.000Z",
       "freeToUse": true,
@@ -67364,7 +67365,7 @@
       "code": "initial-drift",
       "type": "challenge",
       "title": "Initial Drift",
-      "description": "A sales employee, straying from their role, falls victim to a malvertising trap while searching for a printer driver. This misstep downloads malware disguised as a legitimate driver, triggering a network-wide compromise through privilege escalation and lateral movement.\n\nCan you trace the attack chain and secure the network before it’s too late?",
+      "description": "A sales employee, straying from their role, falls victim to a malvertising trap while searching for a printer driver. This misstep downloads malware disguised as a legitimate driver, triggering a network-wide compromise through privilege escalation and lateral movement.\n\nCan you trace the attack chain and secure the network before it\u2019s too late?",
       "imageURL": "https://cdn.sanity.io/images/bwq4c255/production/22bbe35bcd8b3dd8857594a7448cfa3d96d0bc78-1355x1461.png",
       "published": "2024-11-29T10:43:40.000Z",
       "freeToUse": true,
@@ -67448,7 +67449,7 @@
       "code": "legal-shark",
       "type": "challenge",
       "title": "Legal Shark",
-      "description": "TrySueMe isn’t your average law firm. Fast-moving, sharp-talking, and led by the unstoppable Sue Hastings, they’ve gone toe-to-toe with regulators, rivals, and courtroom giants alike. However, their newest client: the President of the United Lunar States, has raised the stakes higher than ever.\n\nThe National Cybersecurity Coordination Centre (NCCC) recently released a bulletin warning legal services to be on high alert. Threat actors are said to be probing firms just like TrySueMe, searching for a way in. But inside the office, no one’s losing sleep. “What would hackers want from a small law firm like ours?”",
+      "description": "TrySueMe isn\u2019t your average law firm. Fast-moving, sharp-talking, and led by the unstoppable Sue Hastings, they\u2019ve gone toe-to-toe with regulators, rivals, and courtroom giants alike. However, their newest client: the President of the United Lunar States, has raised the stakes higher than ever.\n\nThe\u00a0National Cybersecurity Coordination Centre (NCCC)\u00a0recently\u00a0released a bulletin warning legal services to be on high alert. Threat actors are said to be probing firms just like TrySueMe, searching for a way in. But inside the office, no one\u2019s losing sleep. \u201cWhat would hackers want from a small law firm like ours?\u201d",
       "imageURL": "https://cdn.sanity.io/images/bwq4c255/production/9efc55a3a84e3cd47abab7340609d5a8f8f293e9-2500x2500.png",
       "published": "2025-09-05T09:17:10.000Z",
       "freeToUse": true,
@@ -67504,7 +67505,7 @@
       "code": "health-hazard",
       "type": "challenge",
       "title": "Health Hazard",
-      "description": "After months of juggling content calendars and caffeine-fueled brainstorming, co-founder Tom Whiskers finally carved out time to build the company’s first website. It was supposed to be simple: follow a tutorial, install a few packages, and bring the brand to life with lightweight JavaScript magic.\n\nBut between sleepless nights and copy-pasted code, Tom started feeling off. Not sick exactly, just off. The terminal scrolled with reassuring green text, the site loaded fine, and everything looked normal.\n\nThen, a strange file appeared on the system. No one could say where it came from. It wasn’t part of the tutorial, didn’t match any known dependencies, and didn’t even run.\n\nIt just waited.",
+      "description": "After months of juggling content calendars and caffeine-fueled brainstorming, co-founder Tom Whiskers finally carved out time to build the company\u2019s first website. It was supposed to be simple: follow a tutorial, install a few packages, and bring the brand to life with lightweight JavaScript magic.\n\nBut between sleepless nights and copy-pasted code, Tom started feeling off. Not sick exactly, just off. The terminal scrolled with reassuring green text, the site loaded fine, and everything looked normal.\n\nThen, a strange file appeared on the system. No one could say where it came from. It wasn\u2019t part of the tutorial, didn\u2019t match any known dependencies, and didn\u2019t even run.\n\nIt just waited.",
       "imageURL": "https://cdn.sanity.io/images/bwq4c255/production/f0dd562fb820be2089f94fd1d1b2809275b1f0da-600x600.png",
       "published": "2025-06-27T23:43:13.000Z",
       "freeToUse": true,
@@ -67532,7 +67533,7 @@
       "code": "typo-snare",
       "type": "challenge",
       "title": "Typo Snare",
-      "description": "The alert hit the SOC around 4:00 PM. Two machines, fully encrypted. Ransom notes where files used to be. The central SIEM went dark just minutes before.\n\nFortunately, someone had managed to pull logs from the two affected hosts—Perry’s and another developer’s—before everything spiraled out of control.\n\nNow the team has to figure out what happened. And all signs point to something Perry did earlier that day...\n\n**September 26, 2023**—just another Tuesday at SwiftSpend Financial, a small but resourceful company where everyone’s always juggling five deadlines and too much coffee.\n\nPerry, one of the devs, had a tight sprint deadline. His manager had sent him an encrypted .7z archive with a snippet of code that needed finishing _yesterday_. Perry quickly realized his workstation didn’t have anything that could unzip the file. So, in true caffeine-fueled developer fashion, he Googled the first thing that came to mind, clicked the top result (because who scrolls down?), and downloaded a tool to open it.\n\nEverything seemed fine. Until it wasn’t.\n\nA little more than one hour later, Perry’s workstation started acting weird. At first, it was slow. Then apps crashed. Then everything—literally every file—became unreadable.\n\nYour mission as a threat hunter is to dig through the logs and reconstruct the attack chain. What happened? How did it start? How did it spread? And what damage did it do? \n",
+      "description": "The alert hit the SOC around 4:00 PM. Two machines, fully encrypted. Ransom notes where files used to be. The central SIEM went dark just minutes before.\n\nFortunately, someone had managed to pull logs from the two affected hosts\u2014Perry\u2019s and another developer\u2019s\u2014before everything spiraled out of control.\n\nNow the team has to figure out what happened. And all signs point to something Perry did earlier that day...\n\n**September 26, 2023**\u2014just another Tuesday at SwiftSpend Financial, a small but resourceful company where everyone\u2019s always juggling five deadlines and too much coffee.\n\nPerry, one of the devs, had a tight sprint deadline. His manager had sent him an encrypted .7z archive with a snippet of code that needed finishing _yesterday_. Perry quickly realized his workstation didn\u2019t have anything that could unzip the file. So, in true caffeine-fueled developer fashion, he Googled the first thing that came to mind, clicked the top result (because who scrolls down?), and downloaded a tool to open it.\n\nEverything seemed fine. Until it wasn\u2019t.\n\nA little more than one hour later, Perry\u2019s workstation started acting weird. At first, it was slow. Then apps crashed. Then everything\u2014literally every file\u2014became unreadable.\n\nYour mission as a threat hunter is to dig through the logs and reconstruct the attack chain. What happened? How did it start? How did it spread? And what damage did it do? \n",
       "imageURL": "https://cdn.sanity.io/images/bwq4c255/production/4c3e478d115f5ee63d91982fbb820a0f1d8ee401-521x483.svg",
       "published": "2025-05-14T21:55:05.000Z",
       "freeToUse": true,
@@ -67641,7 +67642,7 @@
     {
       "_id": "60cf421a437056aee2bed66d",
       "title": "Network Fundamentals",
-      "description": "Every security professional needs to understand the network fundamentals. This module will introduce the core concepts of computer networking, covering everything from the Internet Protocol (IP), network topologies, TCP and UDP protocols of the OSI Transport Layer. Don’t worry if that sounds complicated, as this modules labs uses fun beginner friendly exercises and real-world examples to help guide your learning.",
+      "description": "Every security professional needs to understand the network fundamentals. This module will introduce the core concepts of computer networking, covering everything from the Internet Protocol (IP), network topologies, TCP and UDP protocols of the OSI Transport Layer. Don\u2019t worry if that sounds complicated, as this modules labs uses fun beginner friendly exercises and real-world examples to help guide your learning.",
       "image": "https://cdn-images.tryhackme.com/modules/gamified-paths-module-2.png",
       "tags": [
         "fundamental"
@@ -68238,7 +68239,7 @@
     {
       "_id": "63498fa566638c250cce603a",
       "title": "Digital Forensics and Incident Response",
-      "description": "Forensic artifacts are pieces of evidence left by human activity. In this module, we will learn about the forensic artifacts in Windows and Linux operating systems and perform basic malware analysis. We will learn to use Kape, Autopsy, Zimmerman’s tools, and Volatility to collect forensic data. We will also learn how to organize this data and leverage it to investigate incidents using the Hive project.",
+      "description": "Forensic artifacts are pieces of evidence left by human activity. In this module, we will learn about the forensic artifacts in Windows and Linux operating systems and perform basic malware analysis. We will learn to use Kape, Autopsy, Zimmerman\u2019s tools, and Volatility to collect forensic data. We will also learn how to organize this data and leverage it to investigate incidents using the Hive project.",
       "tags": [
         "fundamental",
         "defensive"
@@ -68423,7 +68424,7 @@
     {
       "_id": "6494ac602a97f1193e6ff914",
       "title": "Software Security",
-      "description": "This module will introduce you to the software development lifecycle and the core security controls that can be integrated into it to prevent vulnerabilities in the final product. You’ll learn about the most common vulnerabilities in web applications and APIs, and how to integrate DAST and SAST tools into early development phases to detect and mitigate them proactively.",
+      "description": "This module will introduce you to the software development lifecycle and the core security controls that can be integrated into it to prevent vulnerabilities in the final product. You\u2019ll learn about the most common vulnerabilities in web applications and APIs, and how to integrate DAST and SAST tools into early development phases to detect and mitigate them proactively.",
       "image": "https://assets.tryhackme.com/img/modules/software-security.png",
       "tags": [
         "fundamental"
@@ -68495,7 +68496,7 @@
     {
       "_id": "64ff03cc04e4d04278e2a045",
       "title": "Threats and Risks",
-      "description": "In this module, we will be exploring the concepts of threat and risk management. Security engineers often have to help identify and classify potential threats. This helps to better understand security issues before they can fully become vulnerabilities. Similarly, risk management is required to decide what will be best to help mitigate the risk. The answer isn’t always just to deploy more security, as security has a cost. In this module, we will look to better understand that a balance approach to security is required.",
+      "description": "In this module, we will be exploring the concepts of threat and risk management. Security engineers often have to help identify and classify potential threats. This helps to better understand security issues before they can fully become vulnerabilities. Similarly, risk management is required to decide what will be best to help mitigate the risk. The answer isn\u2019t always just to deploy more security, as security has a cost. In this module, we will look to better understand that a balance approach to security is required.",
       "image": "https://assets.tryhackme.com/img/modules/threats-and-risks.png",
       "tags": [
         "fundamental"
@@ -68604,7 +68605,7 @@
     {
       "_id": "651ac3f9fb7c83afc685466f",
       "title": "Threat Hunting",
-      "description": "In this module, we’ll tackle ways to hunt known Tactics, Techniques and Procedures (TTPs) using different methodologies of threat hunting. You will learn to effectively differentiate benign and malicious activity from a large dataset of logs ingested in a SIEM. Additionally, you will be tasked to hunt and investigate scenarios that typically occur in real life.",
+      "description": "In this module, we\u2019ll tackle ways to hunt known Tactics, Techniques and Procedures (TTPs) using different methodologies of threat hunting. You will learn to effectively differentiate benign and malicious activity from a large dataset of logs ingested in a SIEM. Additionally, you will be tasked to hunt and investigate scenarios that typically occur in real life.",
       "tags": [
         "defensive"
       ],
@@ -68694,7 +68695,7 @@
     {
       "_id": "651ac48bfb7c83afc68bb268",
       "title": "Threat Emulation",
-      "description": "In this module, we’ll showcase the benefits of understanding different threat actors' Tactics, Techniques, and Procedures through adversary emulation and learn to defend against them by seeing them in action. You will learn how to plan threat emulation activities through different Threat Modeling frameworks and execute them through Atomic Red Team and Caldera. Additionally, you’ll be observing these emulation activities from a defender's perspective.",
+      "description": "In this module, we\u2019ll showcase the benefits of understanding different threat actors' Tactics, Techniques, and Procedures through adversary emulation and learn to defend against them by seeing them in action. You will learn how to plan threat emulation activities through different Threat Modeling frameworks and execute them through Atomic Red Team and Caldera. Additionally, you\u2019ll be observing these emulation activities from a defender's perspective.",
       "tags": [
         "defensive"
       ],
@@ -68748,7 +68749,7 @@
     {
       "_id": "65a187fe9a2615935f251c4c",
       "title": "AoC 2023 Side Quest",
-      "description": "After his failed attempt in 2022, the Yeti needs your help to establish a foothold on Best Festival Company again. With all the work McSkidy and the other elves have put into securing their network, this won’t be an easy task. This group of challenges were released as a hidden side quest to the Advent of Cyber 2023 event and comprised hard to insane difficulty challenges tailored for advanced users. Are you up to the challenge?",
+      "description": "After his failed attempt in 2022, the Yeti needs your help to establish a foothold on Best Festival Company again. With all the work McSkidy and the other elves have put into securing their network, this won\u2019t be an easy task. This group of challenges were released as a hidden side quest to the Advent of Cyber 2023 event and comprised hard to insane difficulty challenges tailored for advanced users. Are you up to the challenge?",
       "image": "https://assets.tryhackme.com/img/modules/aoc-2023-side-quest.png",
       "tags": [],
       "difficultyLevel": 4,
@@ -68815,7 +68816,7 @@
     {
       "_id": "6601b57f1ffbacb650985d8e",
       "title": "HTTP Request Smuggling",
-      "description": "In this module, we'll explore an attack that takes advantage of how different web servers interpret HTTP requests. We'll examine the basic techniques of HTTP request smuggling, such as Content-Length/Transfer-Encoding (CL.TE), Transfer-Encoding/Content-Length (TE.CL), and Transfer-Encoding obfuscation. We’ll also cover Browser desync attacks, where attackers disrupt the alignment between the user's browser and the server. Additionally, we'll also look into HTTP2 smuggling, which utilizes the complexity of the HTTP2 protocol to bypass security measures.",
+      "description": "In this module, we'll explore an attack that takes advantage of how different web servers interpret HTTP requests. We'll examine the basic techniques of HTTP request smuggling, such as Content-Length/Transfer-Encoding (CL.TE), Transfer-Encoding/Content-Length (TE.CL), and Transfer-Encoding obfuscation. We\u2019ll also cover Browser desync attacks, where attackers disrupt the alignment between the user's browser and the server. Additionally, we'll also look into HTTP2 smuggling, which utilizes the complexity of the HTTP2 protocol to bypass security measures.",
       "image": "https://assets.tryhackme.com/img/modules/http-request-smuggling.png",
       "tags": [
         "offensive"
@@ -68911,7 +68912,7 @@
     {
       "_id": "66ad00c36d1189d28237d89d",
       "title": "Injection Attacks",
-      "description": "In this module, we'll guide you through the complex landscape of injection attacks, focusing on vulnerabilities like SQL Injection, SSTI, LDAP Injection, and XXE Injection. We’ll start with Advanced SQL Injection, where you’ll learn how injection-based attacks can be used for relational databases, leading to data pilferage and RCE. We'll then pivot to NoSQL Injection where you’ll learn the impact of injection attacks on non-relational databases like MongoDB. As we start into XXE injection, you'll learn about how these attacks can lead to data leakage and data exfiltration. Further, you’ll learn about Server-Side Template Injection and how template engines can be exploited leading to RCE. Each section of this module is strengthened with real-world scenarios designed to understand, effectively mitigate, and protect against these client-side vulnerabilities.",
+      "description": "In this module, we'll guide you through the complex landscape of injection attacks, focusing on vulnerabilities like SQL Injection, SSTI, LDAP Injection, and XXE Injection. We\u2019ll start with Advanced SQL Injection, where you\u2019ll learn how injection-based attacks can be used for relational databases, leading to data pilferage and RCE. We'll then pivot to NoSQL Injection where you\u2019ll learn the impact of injection attacks on non-relational databases like MongoDB. As we start into XXE injection, you'll learn about how these attacks can lead to data leakage and data exfiltration. Further, you\u2019ll learn about Server-Side Template Injection and how template engines can be exploited leading to RCE. Each section of this module is strengthened with real-world scenarios designed to understand, effectively mitigate, and protect against these client-side vulnerabilities.",
       "tags": [
         "offensive"
       ],
@@ -68947,7 +68948,7 @@
     {
       "_id": "66e8323a049bf9b1812965cf",
       "title": "Kubernetes Hardening",
-      "description": "In this module, we will be starting with foundational Kubernetes skills and turning them into an in-depth understanding of security practices used to harden a Kubernetes environment. This will be achieved by exploring Kubernetes security considerations from setting up all the way to when applications are running. This module also covers security considerations that need to be taken into account when using a microservices architecture, and implementing them in a Kubernetes cluster. By the end of this module, you’ll have a greater knowledge of what, as a DevSecOps engineer, your responsibilities would be when using Kubernetes and how the tool fits into the greater DevSecOps landscape.",
+      "description": "In this module, we will be starting with foundational Kubernetes skills and turning them into an in-depth understanding of security practices used to harden a Kubernetes environment. This will be achieved by exploring Kubernetes security considerations from setting up all the way to when applications are running. This module also covers security considerations that need to be taken into account when using a microservices architecture, and implementing them in a Kubernetes cluster. By the end of this module, you\u2019ll have a greater knowledge of what, as a DevSecOps engineer, your responsibilities would be when using Kubernetes and how the tool fits into the greater DevSecOps landscape.",
       "image": "https://assets.tryhackme.com/img/modules/kubernetes-hardening.svg",
       "tags": [
         "offensive"
@@ -69194,7 +69195,7 @@
     {
       "_id": "676285b30836deba0e796919",
       "title": "Wonderland",
-      "description": "This module is designed to test your CTF problem-solving skills. It presents fictional, themed challenges inspired by Alice in Wonderland and offers limited guidance. It’s perfect for learners ready to apply what they know.",
+      "description": "This module is designed to test your CTF problem-solving skills. It presents fictional, themed challenges inspired by Alice in Wonderland and offers limited guidance. It\u2019s perfect for learners ready to apply what they know.",
       "image": "https://assets.tryhackme.com/img/badges/wonderland.svg",
       "tags": [],
       "difficultyLevel": 3,
@@ -69210,7 +69211,7 @@
     {
       "_id": "676285b30836deba0e79691a",
       "title": "Overpass",
-      "description": "The Overpass module walks you through a fictional but realistic security story involving a startup building a password manager. It’s a narrative-driven training series that introduces essential cybersecurity concepts through a progressive storyline.\n",
+      "description": "The Overpass module walks you through a fictional but realistic security story involving a startup building a password manager. It\u2019s a narrative-driven training series that introduces essential cybersecurity concepts through a progressive storyline.\n",
       "image": "https://assets.tryhackme.com/img/badges/overpass.svg",
       "tags": [],
       "difficultyLevel": 2,
@@ -69226,7 +69227,7 @@
     {
       "_id": "676285b30836deba0e79691b",
       "title": "New Year",
-      "description": "The New Year module is a set of standalone challenges that don’t follow a common theme. Each room varies in difficulty and style, encouraging players to think independently and adapt to different situations.\n",
+      "description": "The New Year module is a set of standalone challenges that don\u2019t follow a common theme. Each room varies in difficulty and style, encouraging players to think independently and adapt to different situations.\n",
       "image": "https://assets.tryhackme.com/img/badges/newyear.svg",
       "tags": [],
       "difficultyLevel": 4,
@@ -69322,7 +69323,7 @@
     {
       "_id": "67812b9dc9239bc099f585e1",
       "title": "DFIR Essentials",
-      "description": "In this module, we will be expanding our forensics knowledge by covering the core philosophy and ethical decisions that guide DFIR professionals, followed by a look into the considerations made when presenting forensic evidence in legal cases. You'll be diving into how to construct and analyse timelines using Log2Timeline and Timesketch, tools that are worth adding to your skills. Finally, you’ll learn about establishing baselines and developing the ability to distinguish normal from suspicious activities.",
+      "description": "In this module, we will be expanding our forensics knowledge by covering the core philosophy and ethical decisions that guide DFIR professionals, followed by a look into the considerations made when presenting forensic evidence in legal cases. You'll be diving into how to construct and analyse timelines using Log2Timeline and Timesketch, tools that are worth adding to your skills. Finally, you\u2019ll learn about establishing baselines and developing the ability to distinguish normal from suspicious activities.",
       "image": "https://assets.tryhackme.com/img/modules/DFIR-essentials.svg",
       "tags": [],
       "difficultyLevel": 3,
@@ -69480,7 +69481,7 @@
     {
       "_id": "682f4b3513121de268aaaeb0",
       "title": "Mobile Analysis",
-      "description": "This module introduces key concepts and practical techniques for mobile forensics, focusing on both Android and iOS platforms. You will learn how to acquire and preserve mobile evidence, understand the unique structure of these filesystems and architecture, identify valuable artefacts such as messages, location data, app activity, and more. Through realistic mobile captures and interactive scenarios, you’ll gain practical experience with forensic tools and methods used in the industry. By the end of this module, you will be equipped with the knowledge and skills to perform effective mobile analysis as part of forensic investigations or incident response processes.",
+      "description": "This module introduces key concepts and practical techniques for mobile forensics, focusing on both Android and iOS platforms. You will learn how to acquire and preserve mobile evidence, understand the unique structure of these filesystems and architecture, identify valuable artefacts such as messages, location data, app activity, and more. Through realistic mobile captures and interactive scenarios, you\u2019ll gain practical experience with forensic tools and methods used in the industry. By the end of this module, you will be equipped with the knowledge and skills to perform effective mobile analysis as part of forensic investigations or incident response processes.",
       "tags": [],
       "image": "https://assets.tryhackme.com/img/modules/mobile-analysis.png",
       "difficultyLevel": 2,
@@ -69528,7 +69529,7 @@
     {
       "_id": "685518dfb07634cd3419adfc",
       "title": "Custom Tooling",
-      "description": "In real-world engagements, off-the-shelf tools can fall short. This module focuses on developing custom tooling to extend your offensive capabilities. You’ll start with Python to automate requests, manage sessions, and script around protections. Then, you’ll write custom Burp Suite extensions to inspect and manipulate encrypted or obfuscated traffic. Finally, you’ll use browser automation to simulate user actions, bypass client-side controls, and exploit dynamic applications. By the end of this module, you’ll know how to build targeted, reusable tools tailored for complex web application scenarios.",
+      "description": "In real-world engagements, off-the-shelf tools can fall short. This module focuses on developing custom tooling to extend your offensive capabilities. You\u2019ll start with Python to automate requests, manage sessions, and script around protections. Then, you\u2019ll write custom Burp Suite extensions to inspect and manipulate encrypted or obfuscated traffic. Finally, you\u2019ll use browser automation to simulate user actions, bypass client-side controls, and exploit dynamic applications. By the end of this module, you\u2019ll know how to build targeted, reusable tools tailored for complex web application scenarios.",
       "tags": [],
       "image": "https://assets.tryhackme.com/img/modules/custom-tooling.png",
       "difficultyLevel": 3,
@@ -69544,7 +69545,7 @@
     {
       "_id": "686bb99ffbbcdf709d68828d",
       "title": "Defending AI",
-      "description": "This module explores how adversaries exploit machine learning models using adversarial inputs, data poisoning, and evasion techniques that bypass traditional defenses. You’ll start by identifying these attacks and learning how they impact model integrity. Then, you’ll implement defensive strategies like adversarial training and input validation to harden your systems. Finally, you’ll leverage AI itself to assist in blue team operations by automating triage, detecting anomalies, and accelerating forensic investigations. By the end, you’ll know how to secure ML pipelines and weaponise AI for defensive advantage.",
+      "description": "This module explores how adversaries exploit machine learning models using adversarial inputs, data poisoning, and evasion techniques that bypass traditional defenses. You\u2019ll start by identifying these attacks and learning how they impact model integrity. Then, you\u2019ll implement defensive strategies like adversarial training and input validation to harden your systems. Finally, you\u2019ll leverage AI itself to assist in blue team operations by automating triage, detecting anomalies, and accelerating forensic investigations. By the end, you\u2019ll know how to secure ML pipelines and weaponise AI for defensive advantage.",
       "image": "https://assets.tryhackme.com/img/modules/ai-module.svg",
       "tags": [],
       "difficultyLevel": 3,
@@ -69608,7 +69609,7 @@
     {
       "_id": "68f10fc449ebc9e3fcc600cf",
       "title": "Chaining Vulnerabilities",
-      "description": "In real-world engagements, a single flaw rarely leads straight to full compromise, but chaining them can. This module focuses on how to think like an attacker, viewing applications holistically and spotting vulnerabilities to link them together. You will go through the methodology of building attack chains by identifying and mapping small impact vulnerabilities, then exploring how each can act as a stepping stone toward a bigger objective. Finally, you’ll test your skills in advanced, realistic challenges that require building full attack chains from discovery to exploitation. By the end, you’ll move past finding single bugs and learn to create full attack paths like a real attacker.",
+      "description": "In real-world engagements, a single flaw rarely leads straight to full compromise, but chaining them can. This module focuses on how to think like an attacker, viewing applications holistically and spotting vulnerabilities to link them together. You will go through the methodology of building attack chains by identifying and mapping small impact vulnerabilities, then exploring how each can act as a stepping stone toward a bigger objective. Finally, you\u2019ll test your skills in advanced, realistic challenges that require building full attack chains from discovery to exploitation. By the end, you\u2019ll move past finding single bugs and learn to create full attack paths like a real attacker.",
       "image": "https://cdn-images.tryhackme.com/modules/chaining-vulnerabilities-1760628675510.svg",
       "tags": [],
       "difficultyLevel": 3,
@@ -69672,7 +69673,7 @@
     {
       "_id": "690390daa6ce34c608bb5d1c",
       "title": "Malware Concepts for SOC",
-      "description": "In this module, you will learn how to identify and classify different types of malware encountered in SOC operations. You’ll understand malware goals, risks, and behaviours and how to attribute files to specific malware types. You’ll also discover why attackers increasingly use living off the land techniques and how to detect their misuse.",
+      "description": "In this module, you will learn how to identify and classify different types of malware encountered in SOC operations. You\u2019ll understand malware goals, risks, and behaviours and how to attribute files to specific malware types. You\u2019ll also discover why attackers increasingly use living off the land techniques and how to detect their misuse.",
       "image": "https://cdn-images.tryhackme.com/modules/malware-concepts-for-soc-1761852381555.svg",
       "tags": [],
       "difficultyLevel": 2,
@@ -69704,7 +69705,7 @@
     {
       "_id": "6904af19a1abe9c491f9a939",
       "title": "Linux Security Monitoring",
-      "description": "This module explores the Linux attacks and defenses directly on the host, without SIEM abstractions. Through hands-on labs, you’ll uncover malware uploads, reverse shells, cryptomining activity and then trace every step back through system and process logs. This hands-on experience will sharpen your Linux skills and prepare you for real-world SOC work.",
+      "description": "This module explores the Linux attacks and defenses directly on the host, without SIEM abstractions. Through hands-on labs, you\u2019ll uncover malware uploads, reverse shells, cryptomining activity and then trace every step back through system and process logs. This hands-on experience will sharpen your Linux skills and prepare you for real-world SOC work.",
       "image": "https://cdn-images.tryhackme.com/modules/linux-security-monitoring-1761914648963.svg",
       "tags": [],
       "difficultyLevel": 3,
@@ -69736,7 +69737,7 @@
     {
       "_id": "6908bfcabf69a92ed6dbb6ed",
       "title": "Blue Team Introduction",
-      "description": "This module immerses you in the work of a Security Operations Centre, where you’ll learn how both humans and systems become attack vectors, and how analysts detect and respond in real time. Through hands-on scenarios, you’ll gain practical insight into defending organisations from cyber attacks and explore SOC roles, tools, and skills needed to begin your journey as a Junior Security Analyst.",
+      "description": "This module immerses you in the work of a Security Operations Centre, where you\u2019ll learn how both humans and systems become attack vectors, and how analysts detect and respond in real time. Through hands-on scenarios, you\u2019ll gain practical insight into defending organisations from cyber attacks and explore SOC roles, tools, and skills needed to begin your journey as a Junior Security Analyst.",
       "image": "https://cdn-images.tryhackme.com/modules/blue-team-introduction-1762181065779.svg",
       "tags": [],
       "difficultyLevel": 2,
@@ -69848,7 +69849,7 @@
     {
       "_id": "699379bbd49c68a3b3a78804",
       "title": "Operating Systems Basics",
-      "description": "Every device you use runs an operating system, it's the layer between you and the hardware. In this module,  you’ll explore what an operating system is, its core duties, and common use cases. You will then focus on practical interaction with Windows through its graphical user interface, before moving to Linux and Windows command line environments to navigate and read files, and collect basic system information.",
+      "description": "Every device you use runs an operating system, it's the layer between you and the hardware. In this module,  you\u2019ll explore what an operating system is, its core duties, and common use cases. You will then focus on practical interaction with Windows through its graphical user interface, before moving to Linux and Windows command line environments to navigate and read files, and collect basic system information.",
       "image": "https://cdn-images.tryhackme.com/module-icons/1773400058187-Module_Image-1.png",
       "tags": [],
       "difficultyLevel": 2,
@@ -69864,7 +69865,7 @@
     {
       "_id": "69937ac784754e5af02052c1",
       "title": "Software Basics",
-      "description": "This module introduces the core building blocks behind software: data representation and encoding. You’ll learn how computers store colours, numbers, and text, and how character encoding turns letters into numeric values that systems can understand. After that, you’ll get hands-on demos in Python and JavaScript, building familiarity with key programming concepts. You’ll finish by exploring databases and learning how SQL is used to retrieve and manage stored data.",
+      "description": "This module introduces the core building blocks behind software: data representation and encoding. You\u2019ll learn how computers store colours, numbers, and text, and how character encoding turns letters into numeric values that systems can understand. After that, you\u2019ll get hands-on demos in Python and JavaScript, building familiarity with key programming concepts. You\u2019ll finish by exploring databases and learning how SQL is used to retrieve and manage stored data.",
       "image": "https://cdn-images.tryhackme.com/module-icons/1773400063710-Module_Image-2.png",
       "tags": [],
       "difficultyLevel": 2,
