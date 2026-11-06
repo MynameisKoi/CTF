@@ -2,7 +2,7 @@
 
 Repository of Capture The Flag (CTF) challenge artifacts, solver scripts, and technical write-ups solved using the **Hermes Agent + Kali Linux** autonomous CTF harness.
 
-> **Live Interactive Room Explorer**: Open [`index.html`](./index.html) in your browser for real-time search and multi-criteria filtering across all 1,402 rooms!
+> 🌐 **Live Interactive Rooms Explorer (GitHub Pages)**: Visit **[https://mynameiskoi.github.io/CTF/](https://mynameiskoi.github.io/CTF/)** or open [`index.html`](./index.html) locally for real-time search, difficulty filters, and TryHackMe room icons!
 
 ## Featured Challenges & Campaigns
 
@@ -30,6 +30,7 @@ Repository of Capture The Flag (CTF) challenge artifacts, solver scripts, and te
 - **Filter Criteria**: Strictly `kind: rooms` (1,402 total rooms)
 - **Completed (`khoiduong2913`)**: 449 / 1402 (32.0%)
 - **Local Write-Ups**: 12 rooms
+- **Live Web App**: [https://mynameiskoi.github.io/CTF/](https://mynameiskoi.github.io/CTF/)
 
 Click below to expand rooms by difficulty:
 
