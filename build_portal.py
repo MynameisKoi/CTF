@@ -36,7 +36,7 @@ def main():
             continue
         seen.add(cl)
 
-        is_completed = (cl in completed_set)
+        is_completed = (cl in completed_set) or (cl in local_writeups)
         has_writeup = cl in local_writeups
         wu_path = local_writeups.get(cl, "")
         img_url = r.get("imageURL") or "https://tryhackme.com/static/images/logo/logo-square-white.svg"
