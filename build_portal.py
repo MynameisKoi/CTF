@@ -337,6 +337,13 @@ def generate_thm_html(rooms):
     .chip.active[data-diff="hard"] {{ background: #ef4444; border-color: #ef4444; color: #fff; }}
     .chip.active[data-diff="insane"] {{ background: #8b5cf6; border-color: #8b5cf6; color: #fff; }}
     .chip.active[data-diff="info"] {{ background: #06b6d4; border-color: #06b6d4; color: #0b0f19; }}
+    .chip.active[data-tier="free"] {{ background: #10b981; border-color: #10b981; color: #0b0f19; }}
+    .chip.active[data-tier="vip"] {{ background: #f59e0b; border-color: #f59e0b; color: #0b0f19; }}
+    .chip.active[data-type="challenge"] {{ background: #3b82f6; border-color: #3b82f6; color: #fff; }}
+    .chip.active[data-type="walkthrough"] {{ background: #10b981; border-color: #10b981; color: #0b0f19; }}
+    .chip.active[data-comp="yes"] {{ background: #10b981; border-color: #10b981; color: #0b0f19; }}
+    .chip.active[data-comp="no"] {{ background: #64748b; border-color: #64748b; color: #fff; }}
+    .chip.active[data-wu="yes"] {{ background: #22c55e; border-color: #22c55e; color: #0b0f19; }}
     .chip-counter {{
       background: rgba(0, 0, 0, 0.3);
       padding: 0.1rem 0.4rem;
@@ -587,7 +594,7 @@ def generate_thm_html(rooms):
 
       <div class="filter-row">
         <span class="filter-label">Difficulty:</span>
-        <button class="chip active" data-diff="all">All <span class="chip-counter" id="count-all">1402</span></button>
+        <button class="chip active" data-diff="all">All <span class="chip-counter" id="count-all">1,402</span></button>
         <button class="chip" data-diff="easy">🟢 Easy <span class="chip-counter" id="count-easy">631</span></button>
         <button class="chip" data-diff="medium">🟡 Medium <span class="chip-counter" id="count-medium">618</span></button>
         <button class="chip" data-diff="hard">🔴 Hard <span class="chip-counter" id="count-hard">113</span></button>
@@ -596,16 +603,30 @@ def generate_thm_html(rooms):
       </div>
 
       <div class="filter-row">
+        <span class="filter-label">Access / Tier:</span>
+        <button class="chip active" data-tier="all">All Tiers <span class="chip-counter" id="count-tier-all">1,402</span></button>
+        <button class="chip" data-tier="free">🟢 Free <span class="chip-counter" id="count-tier-free">738</span></button>
+        <button class="chip" data-tier="vip">👑 VIP / Subscription <span class="chip-counter" id="count-tier-vip">664</span></button>
+      </div>
+
+      <div class="filter-row">
+        <span class="filter-label">Format / Type:</span>
+        <button class="chip active" data-type="all">All Types <span class="chip-counter" id="count-type-all">1,402</span></button>
+        <button class="chip" data-type="challenge">⚔️ Challenge <span class="chip-counter" id="count-type-challenge">545</span></button>
+        <button class="chip" data-type="walkthrough">📖 Walkthrough <span class="chip-counter" id="count-type-walkthrough">857</span></button>
+      </div>
+
+      <div class="filter-row">
         <span class="filter-label">Status:</span>
-        <button class="chip active" data-comp="all">All Rooms</button>
-        <button class="chip" data-comp="yes">✅ Completed (449)</button>
-        <button class="chip" data-comp="no">❌ Incomplete (953)</button>
+        <button class="chip active" data-comp="all">All Status <span class="chip-counter" id="count-comp-all">1,402</span></button>
+        <button class="chip" data-comp="yes">✅ Completed <span class="chip-counter" id="count-comp-yes">449</span></button>
+        <button class="chip" data-comp="no">❌ Incomplete <span class="chip-counter" id="count-comp-no">953</span></button>
       </div>
 
       <div class="filter-row">
         <span class="filter-label">Write-Up:</span>
-        <button class="chip active" data-wu="all">All Rooms</button>
-        <button class="chip" data-wu="yes">📝 Has Write-Up in Repo (12)</button>
+        <button class="chip active" data-wu="all">All Rooms <span class="chip-counter" id="count-wu-all">1,402</span></button>
+        <button class="chip" data-wu="yes">📝 Has Write-Up <span class="chip-counter" id="count-wu-yes">13</span></button>
       </div>
     </div>
 
@@ -651,6 +672,8 @@ def generate_thm_html(rooms):
   <script>
     const rooms = {rooms_json};
     let currentDifficulty = 'all';
+    let currentTier = 'all';
+    let currentType = 'all';
     let currentComp = 'all';
     let currentWu = 'all';
     let searchQuery = '';
@@ -663,7 +686,9 @@ def generate_thm_html(rooms):
       if (!q) return true;
       if (r.title.toLowerCase().includes(q)) return true;
       if (r.code.toLowerCase().includes(q)) return true;
-      if (r.type.toLowerCase().includes(q)) return true;
+      if (r.type && r.type.toLowerCase().includes(q)) return true;
+      if (r.freeToUse && ('free').includes(q)) return true;
+      if (!r.freeToUse && ('vip subscription premium').includes(q)) return true;
       if (r.description && r.description.toLowerCase().includes(q)) return true;
       if (r.tags && r.tags.some(t => t.toLowerCase().includes(q))) return true;
       return false;
@@ -671,30 +696,86 @@ def generate_thm_html(rooms):
 
     function updateCounters() {{
       const q = searchQuery.toLowerCase().trim();
-      const counts = {{ all: 0, easy: 0, medium: 0, hard: 0, insane: 0, info: 0 }};
       
+      const diffCounts = {{ all: 0, easy: 0, medium: 0, hard: 0, insane: 0, info: 0 }};
+      const tierCounts = {{ all: 0, free: 0, vip: 0 }};
+      const typeCounts = {{ all: 0, challenge: 0, walkthrough: 0 }};
+      const compCounts = {{ all: 0, yes: 0, no: 0 }};
+      const wuCounts = {{ all: 0, yes: 0 }};
+
       rooms.forEach(r => {{
-        if (currentComp === 'yes' && !r.completed) return;
-        if (currentComp === 'no' && r.completed) return;
-        if (currentWu === 'yes' && !r.has_writeup) return;
         if (!roomMatchesSearch(r, q)) return;
 
-        counts.all++;
-        const d = (r.difficulty || '').toLowerCase();
-        if (counts.hasOwnProperty(d)) {{
-          counts[d]++;
+        const matchDiff = (currentDifficulty === 'all' || (r.difficulty || '').toLowerCase() === currentDifficulty);
+        const matchTier = (currentTier === 'all' || (currentTier === 'free' && r.freeToUse) || (currentTier === 'vip' && !r.freeToUse));
+        const matchType = (currentType === 'all' || (r.type || '').toLowerCase() === currentType);
+        const matchComp = (currentComp === 'all' || (currentComp === 'yes' && r.completed) || (currentComp === 'no' && !r.completed));
+        const matchWu = (currentWu === 'all' || (currentWu === 'yes' && r.has_writeup));
+
+        // When evaluating Difficulty counts:
+        if (matchTier && matchType && matchComp && matchWu) {{
+          diffCounts.all++;
+          const d = (r.difficulty || '').toLowerCase();
+          if (diffCounts.hasOwnProperty(d)) diffCounts[d]++;
+        }}
+
+        // When evaluating Tier counts:
+        if (matchDiff && matchType && matchComp && matchWu) {{
+          tierCounts.all++;
+          if (r.freeToUse) tierCounts.free++;
+          else tierCounts.vip++;
+        }}
+
+        // When evaluating Type counts:
+        if (matchDiff && matchTier && matchComp && matchWu) {{
+          typeCounts.all++;
+          const t = (r.type || '').toLowerCase();
+          if (typeCounts.hasOwnProperty(t)) typeCounts[t]++;
+        }}
+
+        // When evaluating Status counts:
+        if (matchDiff && matchTier && matchType && matchWu) {{
+          compCounts.all++;
+          if (r.completed) compCounts.yes++;
+          else compCounts.no++;
+        }}
+
+        // When evaluating Write-up counts:
+        if (matchDiff && matchTier && matchType && matchComp) {{
+          wuCounts.all++;
+          if (r.has_writeup) wuCounts.yes++;
         }}
       }});
 
-      for (const k in counts) {{
+      for (const k in diffCounts) {{
         const el = document.getElementById('count-' + k);
-        if (el) el.innerText = counts[k].toLocaleString();
+        if (el) el.innerText = diffCounts[k].toLocaleString();
+      }}
+
+      for (const k in tierCounts) {{
+        const el = document.getElementById('count-tier-' + k);
+        if (el) el.innerText = tierCounts[k].toLocaleString();
+      }}
+
+      for (const k in typeCounts) {{
+        const el = document.getElementById('count-type-' + k);
+        if (el) el.innerText = typeCounts[k].toLocaleString();
+      }}
+
+      for (const k in compCounts) {{
+        const el = document.getElementById('count-comp-' + k);
+        if (el) el.innerText = compCounts[k].toLocaleString();
+      }}
+
+      for (const k in wuCounts) {{
+        const el = document.getElementById('count-wu-' + k);
+        if (el) el.innerText = wuCounts[k].toLocaleString();
       }}
 
       // Check cross-category alert
       const alertBanner = document.getElementById('alert-banner');
-      if (searchQuery && currentDifficulty !== 'all' && counts[currentDifficulty] === 0 && counts.all > 0) {{
-        document.getElementById('alert-text').innerHTML = `Found <strong>${{counts.all}}</strong> matching room(s) in other difficulty categories!`;
+      if (searchQuery && currentDifficulty !== 'all' && diffCounts[currentDifficulty] === 0 && diffCounts.all > 0) {{
+        document.getElementById('alert-text').innerHTML = `Found <strong>${{diffCounts.all}}</strong> matching room(s) in other difficulty categories!`;
         alertBanner.style.display = 'flex';
       }} else {{
         alertBanner.style.display = 'none';
@@ -704,7 +785,10 @@ def generate_thm_html(rooms):
     function filterRooms() {{
       const q = searchQuery.toLowerCase().trim();
       return rooms.filter(r => {{
-        if (currentDifficulty !== 'all' && r.difficulty.toLowerCase() !== currentDifficulty) return false;
+        if (currentDifficulty !== 'all' && (r.difficulty || '').toLowerCase() !== currentDifficulty) return false;
+        if (currentTier === 'free' && !r.freeToUse) return false;
+        if (currentTier === 'vip' && r.freeToUse) return false;
+        if (currentType !== 'all' && (r.type || '').toLowerCase() !== currentType) return false;
         if (currentComp === 'yes' && !r.completed) return false;
         if (currentComp === 'no' && r.completed) return false;
         if (currentWu === 'yes' && !r.has_writeup) return false;
@@ -797,6 +881,26 @@ def generate_thm_html(rooms):
       }});
     }});
 
+    document.querySelectorAll('[data-tier]').forEach(btn => {{
+      btn.addEventListener('click', () => {{
+        document.querySelectorAll('[data-tier]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentTier = btn.getAttribute('data-tier');
+        currentPage = 1;
+        renderTable();
+      }});
+    }});
+
+    document.querySelectorAll('[data-type]').forEach(btn => {{
+      btn.addEventListener('click', () => {{
+        document.querySelectorAll('[data-type]').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentType = btn.getAttribute('data-type');
+        currentPage = 1;
+        renderTable();
+      }});
+    }});
+
     document.querySelectorAll('[data-comp]').forEach(btn => {{
       btn.addEventListener('click', () => {{
         document.querySelectorAll('[data-comp]').forEach(b => b.classList.remove('active'));
@@ -825,6 +929,8 @@ def generate_thm_html(rooms):
 
     document.getElementById('btn-reset-filters').addEventListener('click', () => {{
       currentDifficulty = 'all';
+      currentTier = 'all';
+      currentType = 'all';
       currentComp = 'all';
       currentWu = 'all';
       searchQuery = '';
@@ -832,6 +938,12 @@ def generate_thm_html(rooms):
       
       document.querySelectorAll('[data-diff]').forEach(b => b.classList.remove('active'));
       document.querySelector('[data-diff="all"]').classList.add('active');
+
+      document.querySelectorAll('[data-tier]').forEach(b => b.classList.remove('active'));
+      document.querySelector('[data-tier="all"]').classList.add('active');
+
+      document.querySelectorAll('[data-type]').forEach(b => b.classList.remove('active'));
+      document.querySelector('[data-type="all"]').classList.add('active');
 
       document.querySelectorAll('[data-comp]').forEach(b => b.classList.remove('active'));
       document.querySelector('[data-comp="all"]').classList.add('active');
