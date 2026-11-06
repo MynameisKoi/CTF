@@ -28,7 +28,7 @@ Repository of Capture The Flag (CTF) challenge artifacts, solver scripts, and te
 ## TryHackMe Rooms Directory (Interactive Difficulty Filter)
 
 - **Filter Criteria**: Strictly `kind: rooms` (1,402 total rooms)
-- **Completed (`khoiduong2913`)**: 450 / 1402 (32.1%)
+- **Completed (`khoiduong2913`)**: 449 / 1402 (32.0%)
 - **Local Write-Ups**: 13 rooms
 - **Live Web App**: [https://mynameiskoi.github.io/CTF/](https://mynameiskoi.github.io/CTF/)
 
@@ -749,7 +749,7 @@ Click below to expand rooms by difficulty:
 | [`biohazard`](https://tryhackme.com/r/room/biohazard) | challenge | Biohazard | medium | No | No |
 | [`biteme`](https://tryhackme.com/r/room/biteme) | challenge | biteme | medium | No | No |
 | [`blizzard`](https://tryhackme.com/r/room/blizzard) | walkthrough | Blizzard | medium | No | No |
-| [`blockroom`](https://tryhackme.com/r/room/blockroom) | challenge | Block | medium | Yes | [Yes](./THM/blockroom/README.md) |
+| [`blockroom`](https://tryhackme.com/r/room/blockroom) | challenge | Block | medium | No | [Yes](./THM/blockroom/README.md) |
 | [`blog`](https://tryhackme.com/r/room/blog) | challenge | Blog | medium | No | No |
 | [`boilerctf2`](https://tryhackme.com/r/room/boilerctf2) | challenge | Boiler CTF | medium | No | No |
 | [`boogeyman1`](https://tryhackme.com/r/room/boogeyman1) | walkthrough | Boogeyman 1 | medium | Yes | No |

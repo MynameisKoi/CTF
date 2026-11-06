@@ -5,7 +5,7 @@
 - **TryHackMe Username**: `khoiduong2913` (`644ac05fbd4b3a0055223e91`)
 - **Total Rooms in Catalog**: `1665`
 - **Completed Rooms**: `461`
-- **Rooms with Local Write-Up**: `12`
+- **Rooms with Local Write-Up**: `13`
 - **Full Dataset (All 26 Room Parameters + 2 Status Columns)**: [`thm_rooms_khoiduong2913.csv`](./thm_rooms_khoiduong2913.csv)
 
 ## Columns Included in `thm_rooms_khoiduong2913.csv`
@@ -46,6 +46,7 @@
 | Code | Title | Type | Difficulty | Free | Completed | Has Writeup |
 |---|---|---|---|---|---|---|
 | [`0x41haz`](./0x41haz/) | 0x41haz | challenge | easy | True | Yes | [Yes](./0x41haz/README.md) |
+| [`blockroom`](./blockroom/) | Block | challenge | medium | True | Yes | [Yes](./blockroom/README.md) |
 | [`chrome`](./chrome/) | Chrome | challenge | hard | True | Yes | [Yes](./chrome/README.md) |
 | [`classicpasswd`](./classicpasswd/) | Classic Passwd | challenge | medium | True | Yes | [Yes](./classicpasswd/README.md) |
 | [`compiled`](./compiled/) | Compiled | challenge | easy | True | Yes | [Yes](./compiled/README.md) |

@@ -90,7 +90,7 @@ def main():
         writer.writeheader()
         for r in ordered_rooms:
             code = str(r.get("code", "")).lower()
-            is_completed = (code in completed_set) or (code in writeups_set)
+            is_completed = (code in completed_set)
             has_writeup = code in writeups_set
             if is_completed:
                 completed_count += 1
