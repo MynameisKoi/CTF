@@ -70187,6 +70187,32 @@
       },
       "tags": [],
       "timeToComplete": 1155
+    },
+    {
+      "_id": "6a8000000000000000000001",
+      "code": "opensshcve2026123158",
+      "type": "walkthrough",
+      "title": "OpenSSH: CVE-2026-123158",
+      "difficulty": "medium",
+      "difficultyLevel": 3,
+      "freeToUse": false,
+      "subscriptionTier": "max",
+      "imageURL": "https://tryhackme.com/static/images/logo/logo-square-white.svg",
+      "description": "Exploit and mitigate CVE-2026-123158 (sshole) authentication bypass in OpenSSH running on musl libc without PAM.",
+      "tags": [
+        "Security Analyst/ Blue Team",
+        "Incident response",
+        "OpenSSH",
+        "Alpine",
+        "musl",
+        "CVE-2026-123158",
+        "sshole",
+        "Authentication Bypass",
+        "Linux",
+        "max"
+      ],
+      "kind": "rooms",
+      "published": "2026-11-06T12:00:00.000Z"
     }
   ]
 }

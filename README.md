@@ -27,8 +27,8 @@ Repository of Capture The Flag (CTF) challenge artifacts, solver scripts, and te
 
 ## TryHackMe Rooms Directory (Interactive Difficulty Filter)
 
-- **Filter Criteria**: Strictly `kind: rooms` (1,402 total rooms)
-- **Completed (`khoiduong2913`)**: 450 / 1402 (32.1%)
+- **Filter Criteria**: Strictly `kind: rooms` (1,403 total rooms)
+- **Completed (`khoiduong2913`)**: 450 / 1403 (32.1%)
 - **Local Write-Ups**: 13 rooms
 - **Live Web App**: [https://mynameiskoi.github.io/CTF/](https://mynameiskoi.github.io/CTF/)
 
@@ -674,7 +674,7 @@ Click below to expand rooms by difficulty:
 </details>
 
 <details>
-<summary><b>🟡 Medium Rooms (618 rooms)</b> — Click to expand / collapse</summary>
+<summary><b>🟡 Medium Rooms (619 rooms)</b> — Click to expand / collapse</summary>
 
 | Code | Type | Title | Difficulty | Did I Complete the Room? | Do I Have the Writeup? |
 | :--- | :--- | :--- | :--- | :---: | :---: |
@@ -1047,6 +1047,7 @@ Click below to expand rooms by difficulty:
 | [`onpremisesiac`](https://tryhackme.com/r/room/onpremisesiac) | walkthrough | On-Premises IaC | medium | No | No |
 | [`ctfonepiece65`](https://tryhackme.com/r/room/ctfonepiece65) | challenge | One Piece | medium | No | No |
 | [`opencti`](https://tryhackme.com/r/room/opencti) | walkthrough | OpenCTI | medium | Yes | No |
+| [`opensshcve2026123158`](https://tryhackme.com/r/room/opensshcve2026123158) | walkthrough | OpenSSH: CVE-2026-123158 | medium | No | No |
 | [`operationtakeover`](https://tryhackme.com/r/room/operationtakeover) | challenge | Operation Takeover | medium | No | No |
 | [`orminjection`](https://tryhackme.com/r/room/orminjection) | walkthrough | ORM Injection | medium | Yes | No |
 | [`thm-ctf-jackpot-overflow`](https://tryhackme.com/r/room/thm-ctf-jackpot-overflow) | challenge | Overflow The Jackpot CTF | medium | No | No |

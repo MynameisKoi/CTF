@@ -43,6 +43,10 @@ def main():
         desc = r.get("description") or ""
         tags = r.get("tags") or []
 
+        sub_tier = str(r.get("subscriptionTier", "")).strip().lower()
+        if not sub_tier:
+            sub_tier = "free" if r.get("freeToUse", True) else "premium"
+
         rooms.append({
             "code": code,
             "type": r.get("type", "challenge"),
@@ -52,6 +56,7 @@ def main():
             "description": desc,
             "tags": tags,
             "freeToUse": bool(r.get("freeToUse", True)),
+            "subscriptionTier": sub_tier,
             "completed": is_completed,
             "has_writeup": has_writeup,
             "writeup_path": wu_path
@@ -338,7 +343,8 @@ def generate_thm_html(rooms):
     .chip.active[data-diff="insane"] {{ background: #8b5cf6; border-color: #8b5cf6; color: #fff; }}
     .chip.active[data-diff="info"] {{ background: #06b6d4; border-color: #06b6d4; color: #0b0f19; }}
     .chip.active[data-tier="free"] {{ background: #10b981; border-color: #10b981; color: #0b0f19; }}
-    .chip.active[data-tier="vip"] {{ background: #f59e0b; border-color: #f59e0b; color: #0b0f19; }}
+    .chip.active[data-tier="premium"] {{ background: #f59e0b; border-color: #f59e0b; color: #0b0f19; }}
+    .chip.active[data-tier="max"] {{ background: #a855f7; border-color: #a855f7; color: #fff; box-shadow: 0 0 10px rgba(168, 85, 247, 0.4); }}
     .chip.active[data-type="challenge"] {{ background: #3b82f6; border-color: #3b82f6; color: #fff; }}
     .chip.active[data-type="walkthrough"] {{ background: #10b981; border-color: #10b981; color: #0b0f19; }}
     .chip.active[data-comp="yes"] {{ background: #10b981; border-color: #10b981; color: #0b0f19; }}
@@ -454,6 +460,7 @@ def generate_thm_html(rooms):
     .badge-type-walkthrough {{ background: #1b2826; color: #6ee7b7; border: 1px solid #224d3e; }}
     .badge-free {{ background: rgba(16, 185, 129, 0.12); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.35); }}
     .badge-vip {{ background: rgba(245, 158, 11, 0.12); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.35); }}
+    .badge-max {{ background: rgba(168, 85, 247, 0.18); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.45); font-weight: 700; }}
     .badge-completed {{
       background: rgba(16, 185, 129, 0.2);
       color: #34d399;
@@ -604,9 +611,10 @@ def generate_thm_html(rooms):
 
       <div class="filter-row">
         <span class="filter-label">Access / Tier:</span>
-        <button class="chip active" data-tier="all">All Tiers <span class="chip-counter" id="count-tier-all">1,402</span></button>
+        <button class="chip active" data-tier="all">All Tiers <span class="chip-counter" id="count-tier-all">1,403</span></button>
         <button class="chip" data-tier="free">🟢 Free <span class="chip-counter" id="count-tier-free">738</span></button>
-        <button class="chip" data-tier="vip">👑 VIP / Subscription <span class="chip-counter" id="count-tier-vip">664</span></button>
+        <button class="chip" data-tier="premium">👑 VIP / Premium <span class="chip-counter" id="count-tier-premium">416</span></button>
+        <button class="chip" data-tier="max">⚡ MAX Plan <span class="chip-counter" id="count-tier-max">249</span></button>
       </div>
 
       <div class="filter-row">
@@ -687,8 +695,10 @@ def generate_thm_html(rooms):
       if (r.title.toLowerCase().includes(q)) return true;
       if (r.code.toLowerCase().includes(q)) return true;
       if (r.type && r.type.toLowerCase().includes(q)) return true;
-      if (r.freeToUse && ('free').includes(q)) return true;
-      if (!r.freeToUse && ('vip subscription premium').includes(q)) return true;
+      const tier = (r.subscriptionTier || (r.freeToUse ? 'free' : 'premium')).toLowerCase();
+      if (tier === 'max' && 'max'.includes(q)) return true;
+      if (tier === 'premium' && ('vip premium subscription').includes(q)) return true;
+      if (tier === 'free' && ('free').includes(q)) return true;
       if (r.description && r.description.toLowerCase().includes(q)) return true;
       if (r.tags && r.tags.some(t => t.toLowerCase().includes(q))) return true;
       return false;
@@ -698,7 +708,7 @@ def generate_thm_html(rooms):
       const q = searchQuery.toLowerCase().trim();
       
       const diffCounts = {{ all: 0, easy: 0, medium: 0, hard: 0, insane: 0, info: 0 }};
-      const tierCounts = {{ all: 0, free: 0, vip: 0 }};
+      const tierCounts = {{ all: 0, free: 0, premium: 0, max: 0 }};
       const typeCounts = {{ all: 0, challenge: 0, walkthrough: 0 }};
       const compCounts = {{ all: 0, yes: 0, no: 0 }};
       const wuCounts = {{ all: 0, yes: 0 }};
@@ -706,8 +716,9 @@ def generate_thm_html(rooms):
       rooms.forEach(r => {{
         if (!roomMatchesSearch(r, q)) return;
 
+        const tier = (r.subscriptionTier || (r.freeToUse ? 'free' : 'premium')).toLowerCase();
         const matchDiff = (currentDifficulty === 'all' || (r.difficulty || '').toLowerCase() === currentDifficulty);
-        const matchTier = (currentTier === 'all' || (currentTier === 'free' && r.freeToUse) || (currentTier === 'vip' && !r.freeToUse));
+        const matchTier = (currentTier === 'all' || tier === currentTier);
         const matchType = (currentType === 'all' || (r.type || '').toLowerCase() === currentType);
         const matchComp = (currentComp === 'all' || (currentComp === 'yes' && r.completed) || (currentComp === 'no' && !r.completed));
         const matchWu = (currentWu === 'all' || (currentWu === 'yes' && r.has_writeup));
@@ -722,8 +733,9 @@ def generate_thm_html(rooms):
         // When evaluating Tier counts:
         if (matchDiff && matchType && matchComp && matchWu) {{
           tierCounts.all++;
-          if (r.freeToUse) tierCounts.free++;
-          else tierCounts.vip++;
+          if (tier === 'max') tierCounts.max++;
+          else if (tier === 'premium') tierCounts.premium++;
+          else tierCounts.free++;
         }}
 
         // When evaluating Type counts:
@@ -785,9 +797,9 @@ def generate_thm_html(rooms):
     function filterRooms() {{
       const q = searchQuery.toLowerCase().trim();
       return rooms.filter(r => {{
+        const tier = (r.subscriptionTier || (r.freeToUse ? 'free' : 'premium')).toLowerCase();
         if (currentDifficulty !== 'all' && (r.difficulty || '').toLowerCase() !== currentDifficulty) return false;
-        if (currentTier === 'free' && !r.freeToUse) return false;
-        if (currentTier === 'vip' && r.freeToUse) return false;
+        if (currentTier !== 'all' && tier !== currentTier) return false;
         if (currentType !== 'all' && (r.type || '').toLowerCase() !== currentType) return false;
         if (currentComp === 'yes' && !r.completed) return false;
         if (currentComp === 'no' && r.completed) return false;
@@ -829,9 +841,15 @@ def generate_thm_html(rooms):
           ? '<span class="badge badge-completed"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Completed</span>' 
           : '<span class="badge badge-incomplete">Incomplete</span>';
 
-        const tierHtml = r.freeToUse 
-          ? '<span class="badge badge-free" title="Free Room">Free</span>' 
-          : '<span class="badge badge-vip" title="VIP / Subscription Room">VIP</span>';
+        const tier = (r.subscriptionTier || (r.freeToUse ? 'free' : 'premium')).toLowerCase();
+        let tierHtml = '';
+        if (tier === 'max') {{
+          tierHtml = '<span class="badge badge-max" title="TryHackMe MAX Plan Room">⚡ MAX</span>';
+        }} else if (tier === 'premium') {{
+          tierHtml = '<span class="badge badge-vip" title="VIP / Premium Subscription Room">👑 VIP</span>';
+        }} else {{
+          tierHtml = '<span class="badge badge-free" title="Free Room">Free</span>';
+        }}
 
         const wuHtml = r.has_writeup 
           ? `<a class="btn-writeup" href="${{r.writeup_path}}"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Writeup</a>` 
