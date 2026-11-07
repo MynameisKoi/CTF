@@ -22,7 +22,7 @@ def main():
     for entry in os.listdir(THM_DIR):
         p = os.path.join(THM_DIR, entry)
         if os.path.isdir(p) and os.path.isfile(os.path.join(p, "README.md")):
-            local_writeups[entry.lower()] = f"./THM/{entry}/README.md"
+            local_writeups[entry.lower()] = f"https://github.com/MynameisKoi/CTF/blob/main/THM/{entry}/README.md"
 
     completed_set = {c.lower() for c in data.get("completed_codes", [])}
     raw_rooms = [r for r in data.get("rooms", []) if r.get("kind") == "rooms"]
@@ -985,7 +985,7 @@ def generate_thm_html(rooms):
         }}
 
         const wuHtml = r.has_writeup 
-          ? `<a class="btn-writeup" href="${{r.writeup_path}}"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Writeup</a>` 
+          ? `<a class="btn-writeup" href="${{r.writeup_path}}" target="_blank" rel="noopener"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> Writeup</a>` 
           : '<span style="color: var(--thm-text-dark); font-size: 0.8rem;">No</span>';
 
         const safeImg = r.imageURL || fallbackImg;

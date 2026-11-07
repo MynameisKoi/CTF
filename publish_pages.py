@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Publishes the lightweight CTF Portal site to the `gh-pages` branch.
-Excludes large challenge captures (.pcap, .zip, .tar.gz) so GitHub Pages
-deploys instantly without hitting upload/sync timeouts.
+Publishes the ultra-minimal CTF Portal site to the `gh-pages` branch.
+Only `index.html` and `.nojekyll` are included in `gh-pages` (< 900 KB total),
+while write-up links point directly to `https://github.com/MynameisKoi/CTF/blob/main/THM/<room>/README.md`.
 """
 
 import os
@@ -32,25 +32,24 @@ def main():
     run(f"git worktree add -B gh-pages {TMP_DIR} origin/gh-pages")
 
     try:
-        print("[*] Syncing lightweight web files (excluding heavy capture binaries)...")
-        exclude_args = (
-            '--exclude=".git" '
-            '--exclude="*.pcap*" '
-            '--exclude="*.zip" '
-            '--exclude="*.tar.gz" '
-            '--exclude="*.evtx" '
-            '--exclude="*.Challenge" '
-            '--exclude="*.0x41haz*" '
-            '--exclude="*.Compiled" '
-            '--exclude="b64_*.txt"'
-        )
-        run(f"rsync -avc {exclude_args} {CTF_DIR}/ {TMP_DIR}/")
+        print("[*] Pruning gh-pages to keep ONLY index.html and .nojekyll...")
+        for item in os.listdir(TMP_DIR):
+            if item == ".git":
+                continue
+            item_path = os.path.join(TMP_DIR, item)
+            if os.path.isdir(item_path):
+                shutil.rmtree(item_path)
+            else:
+                os.remove(item_path)
+
+        shutil.copy2(os.path.join(CTF_DIR, "index.html"), os.path.join(TMP_DIR, "index.html"))
+        open(os.path.join(TMP_DIR, ".nojekyll"), "w").close()
 
         print("[*] Committing and pushing to origin/gh-pages...")
         run("git add -A", cwd=TMP_DIR)
         status = run("git status --porcelain", cwd=TMP_DIR)
         if status:
-            run('git commit -m "deploy: update portal on gh-pages"', cwd=TMP_DIR)
+            run('git commit -m "deploy: keep only index.html and .nojekyll on gh-pages"', cwd=TMP_DIR)
             run("git push -u origin gh-pages", cwd=TMP_DIR)
             print("[+] gh-pages branch successfully updated and pushed!")
         else:

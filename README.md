@@ -45,7 +45,7 @@ Click below to expand rooms by difficulty:
 | [`agentory`](https://tryhackme.com/r/room/agentory) | challenge | Agentory | easy | No | No |
 | [`agenticfundamentals`](https://tryhackme.com/r/room/agenticfundamentals) | walkthrough | Agentic Fundamentals | easy | No | No |
 | [`agenticthreatmodelling`](https://tryhackme.com/r/room/agenticthreatmodelling) | walkthrough | Agentic Threat Modelling | easy | No | No |
-| [`handbookfortherecentlycompromised`](https://tryhackme.com/r/room/handbookfortherecentlycompromised) | challenge | Handbook for the Recently Compromised | easy | Yes | [Yes](./THM/handbookfortherecentlycompromised/README.md) |
+| [`handbookfortherecentlycompromised`](https://tryhackme.com/r/room/handbookfortherecentlycompromised) | challenge | Handbook for the Recently Compromised | easy | Yes | [Yes](https://github.com/MynameisKoi/CTF/blob/main/THM/handbookfortherecentlycompromised/README.md) |
 | [`cvephp2shell`](https://tryhackme.com/r/room/cvephp2shell) | walkthrough | PHP2Shell | easy | No | No |
 | [`threathuntingsimulatorhealthhazard`](https://tryhackme.com/r/room/threathuntingsimulatorhealthhazard) | walkthrough | Threat Hunting Simulator: Health Hazard | easy | No | No |
 | [`socsimulatorintroductiontophishing`](https://tryhackme.com/r/room/socsimulatorintroductiontophishing) | walkthrough | SOC Simulator: Introduction to Phishing | easy | No | No |
@@ -358,7 +358,7 @@ Click below to expand rooms by difficulty:
 | [`hijack`](https://tryhackme.com/r/room/hijack) | challenge | Hijack | easy | No | No |
 | [`confluence202322515`](https://tryhackme.com/r/room/confluence202322515) | walkthrough | Confluence CVE-2023-22515 | easy | No | No |
 | [`registrypersistencedetection`](https://tryhackme.com/r/room/registrypersistencedetection) | walkthrough | Registry Persistence Detection | easy | No | No |
-| [`compiled`](https://tryhackme.com/r/room/compiled) | challenge | Compiled | easy | Yes | [Yes](./THM/compiled/README.md) |
+| [`compiled`](https://tryhackme.com/r/room/compiled) | challenge | Compiled | easy | Yes | [Yes](https://github.com/MynameisKoi/CTF/blob/main/THM/compiled/README.md) |
 | [`logoperations`](https://tryhackme.com/r/room/logoperations) | walkthrough | Log Operations | easy | Yes | No |
 | [`lessonslearned`](https://tryhackme.com/r/room/lessonslearned) | walkthrough | Lessons Learned | easy | No | No |
 | [`eradicationandremediation`](https://tryhackme.com/r/room/eradicationandremediation) | walkthrough | Eradication & Remediation | easy | No | No |
@@ -442,7 +442,7 @@ Click below to expand rooms by difficulty:
 | [`committed`](https://tryhackme.com/r/room/committed) | challenge | Committed | easy | No | No |
 | [`wiresharkthebasics`](https://tryhackme.com/r/room/wiresharkthebasics) | walkthrough | Wireshark: The Basics | easy | Yes | No |
 | [`cve202226134`](https://tryhackme.com/r/room/cve202226134) | walkthrough | Atlassian CVE-2022-26134 | easy | No | No |
-| [`mrphisher`](https://tryhackme.com/r/room/mrphisher) | challenge | Mr. Phisher | easy | Yes | [Yes](./THM/mrphisher/README.md) |
+| [`mrphisher`](https://tryhackme.com/r/room/mrphisher) | challenge | Mr. Phisher | easy | Yes | [Yes](https://github.com/MynameisKoi/CTF/blob/main/THM/mrphisher/README.md) |
 | [`cyberheroes`](https://tryhackme.com/r/room/cyberheroes) | challenge | CyberHeroes | easy | No | No |
 | [`networkminer`](https://tryhackme.com/r/room/networkminer) | walkthrough | NetworkMiner | easy | Yes | No |
 | [`digdug`](https://tryhackme.com/r/room/digdug) | challenge | Dig Dug | easy | No | No |
@@ -452,7 +452,7 @@ Click below to expand rooms by difficulty:
 | [`intronetworksecurity`](https://tryhackme.com/r/room/intronetworksecurity) | walkthrough | Network Security | easy | Yes | No |
 | [`introwebapplicationsecurity`](https://tryhackme.com/r/room/introwebapplicationsecurity) | walkthrough | Web Application Security | easy | Yes | No |
 | [`techsupp0rt1`](https://tryhackme.com/r/room/techsupp0rt1) | challenge | Tech_Supp0rt: 1 | easy | No | No |
-| [`0x41haz`](https://tryhackme.com/r/room/0x41haz) | challenge | 0x41haz | easy | Yes | [Yes](./THM/0x41haz/README.md) |
+| [`0x41haz`](https://tryhackme.com/r/room/0x41haz) | challenge | 0x41haz | easy | Yes | [Yes](https://github.com/MynameisKoi/CTF/blob/main/THM/0x41haz/README.md) |
 | [`operatingsystemsecurity`](https://tryhackme.com/r/room/operatingsystemsecurity) | walkthrough | Operating System Security | easy | Yes | No |
 | [`introdigitalforensics`](https://tryhackme.com/r/room/introdigitalforensics) | walkthrough | Intro to Digital Forensics | easy | Yes | No |
 | [`flatline`](https://tryhackme.com/r/room/flatline) | challenge | Flatline | easy | No | No |
@@ -711,7 +711,7 @@ Click below to expand rooms by difficulty:
 | [`accountmanipulationwinir`](https://tryhackme.com/r/room/accountmanipulationwinir) | walkthrough | Detecting Persistent Account Manipulation | medium | No | No |
 | [`dayo`](https://tryhackme.com/r/room/dayo) | challenge | Day-O | medium | No | No |
 | [`strangeunusualactivity`](https://tryhackme.com/r/room/strangeunusualactivity) | challenge | Strange & Unusual Activity | medium | No | No |
-| [`thewaitingroom`](https://tryhackme.com/r/room/thewaitingroom) | challenge | The Waiting Room | medium | Yes | [Yes](./THM/thewaitingroom/README.md) |
+| [`thewaitingroom`](https://tryhackme.com/r/room/thewaitingroom) | challenge | The Waiting Room | medium | Yes | [Yes](https://github.com/MynameisKoi/CTF/blob/main/THM/thewaitingroom/README.md) |
 | [`detectingwmipersistence`](https://tryhackme.com/r/room/detectingwmipersistence) | walkthrough | Detecting Persistent WMI Consumers | medium | No | No |
 | [`detectingpersistentmaliciousservices`](https://tryhackme.com/r/room/detectingpersistentmaliciousservices) | walkthrough | Detecting Persistent Malicious Services | medium | No | No |
 | [`detectingpersistentautostartrunkeys`](https://tryhackme.com/r/room/detectingpersistentautostartrunkeys) | walkthrough | Detecting Persistent AutoStart Run Keys | medium | No | No |
@@ -930,7 +930,7 @@ Click below to expand rooms by difficulty:
 | [`apt28inceptiontheory`](https://tryhackme.com/r/room/apt28inceptiontheory) | walkthrough | APT28 Inception Theory | medium | No | No |
 | [`securityfootage`](https://tryhackme.com/r/room/securityfootage) | challenge | Security Footage | medium | No | No |
 | [`loglesshunt`](https://tryhackme.com/r/room/loglesshunt) | walkthrough | Logless Hunt | medium | No | No |
-| [`mayhemroom`](https://tryhackme.com/r/room/mayhemroom) | challenge | Mayhem | medium | Yes | [Yes](./THM/mayhemroom/README.md) |
+| [`mayhemroom`](https://tryhackme.com/r/room/mayhemroom) | challenge | Mayhem | medium | Yes | [Yes](https://github.com/MynameisKoi/CTF/blob/main/THM/mayhemroom/README.md) |
 | [`xdrintroduction`](https://tryhackme.com/r/room/xdrintroduction) | walkthrough | XDR: Introduction | medium | No | No |
 | [`exfilnode`](https://tryhackme.com/r/room/exfilnode) | challenge | ExfilNode | medium | No | No |
 | [`publickeyinfrastructure`](https://tryhackme.com/r/room/publickeyinfrastructure) | walkthrough | Public Key Infrastructure | medium | No | No |
@@ -951,7 +951,7 @@ Click below to expand rooms by difficulty:
 | [`incidentresponseprocess`](https://tryhackme.com/r/room/incidentresponseprocess) | walkthrough | Incident Response Process | medium | No | No |
 | [`threathuntingwithyara`](https://tryhackme.com/r/room/threathuntingwithyara) | walkthrough | Threat Hunting With YARA | medium | No | No |
 | [`seetworoom`](https://tryhackme.com/r/room/seetworoom) | challenge | SeeTwo | medium | No | No |
-| [`extractedroom`](https://tryhackme.com/r/room/extractedroom) | challenge | Extracted | medium | Yes | [Yes](./THM/extractedroom/README.md) |
+| [`extractedroom`](https://tryhackme.com/r/room/extractedroom) | challenge | Extracted | medium | Yes | [Yes](https://github.com/MynameisKoi/CTF/blob/main/THM/extractedroom/README.md) |
 | [`backtrack`](https://tryhackme.com/r/room/backtrack) | challenge | Backtrack | medium | No | No |
 | [`thelondonbridge`](https://tryhackme.com/r/room/thelondonbridge) | challenge | The London Bridge | medium | No | No |
 | [`breakmenu`](https://tryhackme.com/r/room/breakmenu) | challenge | Breakme | medium | No | No |
@@ -960,7 +960,7 @@ Click below to expand rooms by difficulty:
 | [`hammer`](https://tryhackme.com/r/room/hammer) | challenge | Hammer | medium | Yes | No |
 | [`oauthvulnerabilities`](https://tryhackme.com/r/room/oauthvulnerabilities) | walkthrough | OAuth Vulnerabilities | medium | Yes | No |
 | [`ironshade`](https://tryhackme.com/r/room/ironshade) | challenge | IronShade | medium | No | No |
-| [`blockroom`](https://tryhackme.com/r/room/blockroom) | challenge | Block | medium | Yes | [Yes](./THM/blockroom/README.md) |
+| [`blockroom`](https://tryhackme.com/r/room/blockroom) | challenge | Block | medium | Yes | [Yes](https://github.com/MynameisKoi/CTF/blob/main/THM/blockroom/README.md) |
 | [`joomify`](https://tryhackme.com/r/room/joomify) | walkthrough | Joomify: CVE-2023-23752 | medium | No | No |
 | [`apiwizardsbreach`](https://tryhackme.com/r/room/apiwizardsbreach) | walkthrough | APIWizards Breach | medium | No | No |
 | [`injectics`](https://tryhackme.com/r/room/injectics) | challenge | Injectics | medium | Yes | No |
@@ -1094,7 +1094,7 @@ Click below to expand rooms by difficulty:
 | [`investigatingwithelk101`](https://tryhackme.com/r/room/investigatingwithelk101) | walkthrough | Elastic Stack: The Basics | medium | Yes | No |
 | [`posheclipse`](https://tryhackme.com/r/room/posheclipse) | challenge | PS Eclipse | medium | No | No |
 | [`templates`](https://tryhackme.com/r/room/templates) | challenge | Templates | medium | No | No |
-| [`warzoneone`](https://tryhackme.com/r/room/warzoneone) | challenge | Warzone 1 | medium | Yes | [Yes](./THM/warzoneone/README.md) |
+| [`warzoneone`](https://tryhackme.com/r/room/warzoneone) | challenge | Warzone 1 | medium | Yes | [Yes](https://github.com/MynameisKoi/CTF/blob/main/THM/warzoneone/README.md) |
 | [`investigatingwithsplunk`](https://tryhackme.com/r/room/investigatingwithsplunk) | challenge | Investigating with Splunk | medium | Yes | No |
 | [`itsybitsy`](https://tryhackme.com/r/room/itsybitsy) | challenge | ItsyBitsy | medium | Yes | No |
 | [`benign`](https://tryhackme.com/r/room/benign) | challenge | Benign | medium | Yes | No |
@@ -1221,7 +1221,7 @@ Click below to expand rooms by difficulty:
 | [`inferno`](https://tryhackme.com/r/room/inferno) | challenge | Inferno | medium | No | No |
 | [`investigatingwindows2`](https://tryhackme.com/r/room/investigatingwindows2) | challenge | Investigating Windows 2.0 | medium | No | No |
 | [`investigatingwindows3`](https://tryhackme.com/r/room/investigatingwindows3) | challenge | Investigating Windows 3.x | medium | No | No |
-| [`classicpasswd`](https://tryhackme.com/r/room/classicpasswd) | challenge | Classic Passwd | medium | Yes | [Yes](./THM/classicpasswd/README.md) |
+| [`classicpasswd`](https://tryhackme.com/r/room/classicpasswd) | challenge | Classic Passwd | medium | Yes | [Yes](https://github.com/MynameisKoi/CTF/blob/main/THM/classicpasswd/README.md) |
 | [`madeyescastle`](https://tryhackme.com/r/room/madeyescastle) | challenge | Madeye's Castle | medium | No | No |
 | [`keldagrim`](https://tryhackme.com/r/room/keldagrim) | challenge | Keldagrim | medium | No | No |
 | [`nahamstore`](https://tryhackme.com/r/room/nahamstore) | challenge | NahamStore | medium | No | No |
@@ -1287,7 +1287,7 @@ Click below to expand rooms by difficulty:
 | [`ctfcollectionvol2`](https://tryhackme.com/r/room/ctfcollectionvol2) | challenge | CTF collection Vol.2 | medium | No | No |
 | [`basicmalwarere`](https://tryhackme.com/r/room/basicmalwarere) | challenge | Basic Malware RE | medium | Yes | No |
 | [`jokerctf`](https://tryhackme.com/r/room/jokerctf) | challenge | HA Joker CTF | medium | No | No |
-| [`scripting`](https://tryhackme.com/r/room/scripting) | challenge | Scripting | medium | Yes | [Yes](./THM/scripting/README.md) |
+| [`scripting`](https://tryhackme.com/r/room/scripting) | challenge | Scripting | medium | Yes | [Yes](https://github.com/MynameisKoi/CTF/blob/main/THM/scripting/README.md) |
 | [`biohazard`](https://tryhackme.com/r/room/biohazard) | challenge | Biohazard | medium | No | No |
 | [`breakit`](https://tryhackme.com/r/room/breakit) | challenge | Break it | medium | No | No |
 | [`brainstorm`](https://tryhackme.com/r/room/brainstorm) | challenge | Brainstorm | medium | No | No |
@@ -1330,7 +1330,7 @@ Click below to expand rooms by difficulty:
 | [`extract`](https://tryhackme.com/r/room/extract) | challenge | Extract | hard | No | No |
 | [`contrabando`](https://tryhackme.com/r/room/contrabando) | challenge | Contrabando | hard | No | No |
 | [`eventhorizonroom`](https://tryhackme.com/r/room/eventhorizonroom) | challenge | Event Horizon | hard | No | No |
-| [`directorydfirroom`](https://tryhackme.com/r/room/directorydfirroom) | challenge | Directory | hard | Yes | [Yes](./THM/directorydfirroom/README.md) |
+| [`directorydfirroom`](https://tryhackme.com/r/room/directorydfirroom) | challenge | Directory | hard | Yes | [Yes](https://github.com/MynameisKoi/CTF/blob/main/THM/directorydfirroom/README.md) |
 | [`hfb1royalrouter`](https://tryhackme.com/r/room/hfb1royalrouter) | challenge | Royal Router | hard | No | No |
 | [`hfb1sequeldump`](https://tryhackme.com/r/room/hfb1sequeldump) | challenge | Sequel Dump | hard | No | No |
 | [`macosforensicsapplications`](https://tryhackme.com/r/room/macosforensicsapplications) | walkthrough | macOS Forensics: Applications | hard | No | No |
@@ -1358,7 +1358,7 @@ Click below to expand rooms by difficulty:
 | [`elbandito`](https://tryhackme.com/r/room/elbandito) | challenge | El Bandito | hard | No | No |
 | [`requestsmugglingbrowserdesync`](https://tryhackme.com/r/room/requestsmugglingbrowserdesync) | walkthrough | HTTP Browser Desync | hard | Yes | No |
 | [`http2requestsmuggling`](https://tryhackme.com/r/room/http2requestsmuggling) | walkthrough | HTTP/2 Request Smuggling | hard | Yes | No |
-| [`chrome`](https://tryhackme.com/r/room/chrome) | challenge | Chrome | hard | Yes | [Yes](./THM/chrome/README.md) |
+| [`chrome`](https://tryhackme.com/r/room/chrome) | challenge | Chrome | hard | Yes | [Yes](https://github.com/MynameisKoi/CTF/blob/main/THM/chrome/README.md) |
 | [`exfilibur`](https://tryhackme.com/r/room/exfilibur) | challenge | Exfilibur | hard | No | No |
 | [`resetui`](https://tryhackme.com/r/room/resetui) | challenge | Reset | hard | No | No |
 | [`surfingyetiiscomingtotown`](https://tryhackme.com/r/room/surfingyetiiscomingtotown) | challenge | The Bandit Surfer | hard | No | No |
