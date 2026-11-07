@@ -585,9 +585,9 @@
 
       <div class="filter-row">
         <span class="filter-label">Difficulty:</span>
-        <button class="chip active" data-diff="all">All <span class="chip-counter" id="count-all">1,402</span></button>
+        <button class="chip active" data-diff="all">All <span class="chip-counter" id="count-all">1,403</span></button>
         <button class="chip" data-diff="easy">🟢 Easy <span class="chip-counter" id="count-easy">631</span></button>
-        <button class="chip" data-diff="medium">🟡 Medium <span class="chip-counter" id="count-medium">618</span></button>
+        <button class="chip" data-diff="medium">🟡 Medium <span class="chip-counter" id="count-medium">619</span></button>
         <button class="chip" data-diff="hard">🔴 Hard <span class="chip-counter" id="count-hard">113</span></button>
         <button class="chip" data-diff="insane">🟣 Insane <span class="chip-counter" id="count-insane">9</span></button>
         <button class="chip" data-diff="info">ℹ️ Info <span class="chip-counter" id="count-info">31</span></button>
@@ -603,21 +603,21 @@
 
       <div class="filter-row">
         <span class="filter-label">Format / Type:</span>
-        <button class="chip active" data-type="all">All Types <span class="chip-counter" id="count-type-all">1,402</span></button>
+        <button class="chip active" data-type="all">All Types <span class="chip-counter" id="count-type-all">1,403</span></button>
         <button class="chip" data-type="challenge">⚔️ Challenge <span class="chip-counter" id="count-type-challenge">545</span></button>
-        <button class="chip" data-type="walkthrough">📖 Walkthrough <span class="chip-counter" id="count-type-walkthrough">857</span></button>
+        <button class="chip" data-type="walkthrough">📖 Walkthrough <span class="chip-counter" id="count-type-walkthrough">858</span></button>
       </div>
 
       <div class="filter-row">
         <span class="filter-label">Status:</span>
-        <button class="chip active" data-comp="all">All Status <span class="chip-counter" id="count-comp-all">1,402</span></button>
-        <button class="chip" data-comp="yes">✅ Completed <span class="chip-counter" id="count-comp-yes">449</span></button>
+        <button class="chip active" data-comp="all">All Status <span class="chip-counter" id="count-comp-all">1,403</span></button>
+        <button class="chip" data-comp="yes">✅ Completed <span class="chip-counter" id="count-comp-yes">450</span></button>
         <button class="chip" data-comp="no">❌ Incomplete <span class="chip-counter" id="count-comp-no">953</span></button>
       </div>
 
       <div class="filter-row">
         <span class="filter-label">Write-Up:</span>
-        <button class="chip active" data-wu="all">All Rooms <span class="chip-counter" id="count-wu-all">1,402</span></button>
+        <button class="chip active" data-wu="all">All Rooms <span class="chip-counter" id="count-wu-all">1,403</span></button>
         <button class="chip" data-wu="yes">📝 Has Write-Up <span class="chip-counter" id="count-wu-yes">13</span></button>
       </div>
     </div>
@@ -648,7 +648,7 @@
 
     <div class="pagination-bar">
       <div class="page-summary" id="page-summary-text">
-        Showing 1 to 50 of 1,402 rooms
+        Showing 1 to 50 of 1,403 rooms
       </div>
       <div class="page-buttons">
         <button class="page-btn" id="prev-page-btn">&larr; Previous</button>
@@ -827,11 +827,11 @@
       }
 
       const totalEl = document.getElementById('stat-total-val');
-      if (totalEl) totalEl.innerText = ROOMS.length.toLocaleString();
+      if (totalEl) totalEl.innerText = rooms.length.toLocaleString();
       const compEl = document.getElementById('stat-completed-val');
-      if (compEl) compEl.innerText = ROOMS.filter(r => r.completed).length.toLocaleString();
+      if (compEl) compEl.innerText = rooms.filter(r => r.completed).length.toLocaleString();
       const wuEl = document.getElementById('stat-writeups-val');
-      if (wuEl) wuEl.innerText = ROOMS.filter(r => r.has_writeup).length.toLocaleString();
+      if (wuEl) wuEl.innerText = rooms.filter(r => r.has_writeup).length.toLocaleString();
 
       // Check cross-category alert
       const alertBanner = document.getElementById('alert-banner');

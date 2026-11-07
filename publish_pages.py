@@ -27,8 +27,9 @@ def main():
     if os.path.exists(TMP_DIR):
         shutil.rmtree(TMP_DIR, ignore_errors=True)
 
-    print("[*] Setting up orphan gh-pages worktree...")
-    run(f"git worktree add --orphan -B gh-pages {TMP_DIR}")
+    print("[*] Setting up gh-pages worktree...")
+    run("git worktree prune")
+    run(f"git worktree add -B gh-pages {TMP_DIR} origin/gh-pages")
 
     try:
         print("[*] Syncing lightweight web files (excluding heavy capture binaries)...")
