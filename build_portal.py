@@ -78,6 +78,9 @@ def main():
 
 def generate_thm_html(rooms):
     rooms_json = json.dumps(rooms, ensure_ascii=False)
+    total_rooms = len(rooms)
+    total_completed = sum(1 for r in rooms if r.get("completed"))
+    total_writeups = sum(1 for r in rooms if r.get("has_writeup"))
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -625,19 +628,19 @@ def generate_thm_html(rooms):
       </div>
       <div class="stats-deck">
         <div class="stat-pill">
-          <span class="stat-pill-val">1,402</span>
+          <span class="stat-pill-val" id="stat-total-val">{total_rooms:,}</span>
           <span class="stat-pill-lbl">Rooms Total</span>
         </div>
         <div class="stat-pill">
-          <span class="stat-pill-val" style="color: #34d399;">449</span>
+          <span class="stat-pill-val" id="stat-completed-val" style="color: #34d399;">{total_completed:,}</span>
           <span class="stat-pill-lbl">Completed</span>
         </div>
         <div class="stat-pill">
-          <span class="stat-pill-val" style="color: #38bdf8;">12</span>
+          <span class="stat-pill-val" id="stat-writeups-val" style="color: #38bdf8;">{total_writeups:,}</span>
           <span class="stat-pill-lbl">Write-Ups</span>
         </div>
         <div class="stat-pill">
-          <span class="stat-pill-val" id="stat-filtered-val" style="color: #fbbf24;">1,402</span>
+          <span class="stat-pill-val" id="stat-filtered-val" style="color: #fbbf24;">{total_rooms:,}</span>
           <span class="stat-pill-lbl">Matching</span>
         </div>
       </div>
@@ -905,6 +908,13 @@ def generate_thm_html(rooms):
         const el = document.getElementById('count-wu-' + k);
         if (el) el.innerText = wuCounts[k].toLocaleString();
       }}
+
+      const totalEl = document.getElementById('stat-total-val');
+      if (totalEl) totalEl.innerText = ROOMS.length.toLocaleString();
+      const compEl = document.getElementById('stat-completed-val');
+      if (compEl) compEl.innerText = ROOMS.filter(r => r.completed).length.toLocaleString();
+      const wuEl = document.getElementById('stat-writeups-val');
+      if (wuEl) wuEl.innerText = ROOMS.filter(r => r.has_writeup).length.toLocaleString();
 
       // Check cross-category alert
       const alertBanner = document.getElementById('alert-banner');
