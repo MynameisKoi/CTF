@@ -44,7 +44,7 @@ def main():
             '--exclude="*.Compiled" '
             '--exclude="b64_*.txt"'
         )
-        run(f"rsync -av {exclude_args} {CTF_DIR}/ {TMP_DIR}/")
+        run(f"rsync -avc {exclude_args} {CTF_DIR}/ {TMP_DIR}/")
 
         print("[*] Committing and pushing to origin/gh-pages...")
         run("git add -A", cwd=TMP_DIR)
