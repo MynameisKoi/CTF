@@ -57,12 +57,13 @@ def main():
             "tags": tags,
             "freeToUse": bool(r.get("freeToUse", True)),
             "subscriptionTier": sub_tier,
+            "published": r.get("published", ""),
             "completed": is_completed,
             "has_writeup": has_writeup,
             "writeup_path": wu_path
         })
 
-    rooms.sort(key=lambda x: x["title"].lower())
+    rooms.sort(key=lambda x: x.get("published") or "", reverse=True)
     print(f"Loaded {len(rooms)} rooms (kind: rooms)")
 
     html_content = generate_thm_html(rooms)
@@ -296,6 +297,58 @@ def generate_thm_html(rooms):
       background: #283752;
       color: #fff;
       border-color: var(--thm-red);
+    }}
+    .sort-wrap {{
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #0f1522;
+      border: 1px solid var(--thm-border);
+      border-radius: 8px;
+      padding: 0 0.75rem;
+    }}
+    .sort-label {{
+      font-size: 0.82rem;
+      color: var(--thm-text-muted);
+      font-weight: 600;
+      white-space: nowrap;
+    }}
+    .sort-select {{
+      background: transparent;
+      color: #fff;
+      border: none;
+      font-size: 0.85rem;
+      padding: 0.65rem 0.25rem;
+      cursor: pointer;
+      outline: none;
+      font-weight: 500;
+      font-family: inherit;
+    }}
+    .sort-select option {{
+      background: #141d2b;
+      color: #fff;
+    }}
+    .sortable {{
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.15s;
+    }}
+    .sortable:hover {{
+      color: #fff;
+    }}
+    .sort-icon {{
+      font-size: 0.75rem;
+      color: var(--thm-text-dark);
+      margin-left: 0.25rem;
+    }}
+    .sortable:hover .sort-icon {{
+      color: var(--thm-green);
+    }}
+    .room-date {{
+      font-family: 'Fira Code', monospace;
+      font-size: 0.8rem;
+      color: var(--thm-text-muted);
+      white-space: nowrap;
     }}
     .filter-row {{
       display: flex;
@@ -596,7 +649,18 @@ def generate_thm_html(rooms):
           <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
           <input type="text" id="search-input" class="search-input" placeholder="Search by title, code (e.g. blockroom), tags (smb, forensics, buffer overflow), or description...">
         </div>
-        <button class="btn-reset" id="btn-reset-filters">Reset Filters</button>
+        <div class="sort-wrap">
+          <label for="sort-select" class="sort-label">Sort:</label>
+          <select id="sort-select" class="sort-select">
+            <option value="newest" selected>🕒 Newest First</option>
+            <option value="oldest">⏳ Oldest First</option>
+            <option value="title-asc">🔤 Title (A → Z)</option>
+            <option value="title-desc">🔤 Title (Z → A)</option>
+            <option value="diff-asc">🎯 Difficulty (Easy → Hard)</option>
+            <option value="diff-desc">🎯 Difficulty (Hard → Easy)</option>
+          </select>
+        </div>
+        <button class="btn-reset" id="btn-reset-filters">Reset</button>
       </div>
 
       <div class="filter-row">
@@ -649,11 +713,12 @@ def generate_thm_html(rooms):
           <tr>
             <th style="width: 50px;">Icon</th>
             <th>Code</th>
-            <th>Type</th>
-            <th>Title</th>
-            <th>Difficulty</th>
-            <th>Did I Complete the Room?</th>
-            <th>Do I Have the Writeup?</th>
+            <th>Type & Tier</th>
+            <th class="sortable" data-sort-key="title">Title <span class="sort-icon" id="sort-icon-title">⇅</span></th>
+            <th class="sortable" data-sort-key="diff">Difficulty <span class="sort-icon" id="sort-icon-diff">⇅</span></th>
+            <th class="sortable" data-sort-key="date">Released <span class="sort-icon" id="sort-icon-date">▼</span></th>
+            <th>Completed?</th>
+            <th>Write-Up</th>
           </tr>
         </thead>
         <tbody id="rooms-table-body">
@@ -684,11 +749,68 @@ def generate_thm_html(rooms):
     let currentType = 'all';
     let currentComp = 'all';
     let currentWu = 'all';
+    let currentSort = 'newest';
     let searchQuery = '';
     let currentPage = 1;
     const pageSize = 50;
 
     const fallbackImg = "https://tryhackme.com/static/images/favicon.png";
+
+    const diffWeight = {{
+      'info': 1,
+      'easy': 2,
+      'medium': 3,
+      'hard': 4,
+      'insane': 5
+    }};
+
+    function formatDate(dStr) {{
+      if (!dStr) return '<span style="color: var(--thm-text-dark); font-size: 0.8rem;">-</span>';
+      try {{
+        const d = new Date(dStr);
+        if (isNaN(d.getTime())) return `<span class="room-date">${{dStr.split('T')[0] || dStr}}</span>`;
+        const yyyy = d.getUTCFullYear();
+        const mm = String(d.getUTCMonth() + 1).padStart(2, '0');
+        const dd = String(d.getUTCDate()).padStart(2, '0');
+        return `<span class="room-date">${{yyyy}}-${{mm}}-${{dd}}</span>`;
+      }} catch (e) {{
+        return `<span class="room-date">${{dStr.split('T')[0] || dStr}}</span>`;
+      }}
+    }}
+
+    function sortRooms(list) {{
+      return list.slice().sort((a, b) => {{
+        if (currentSort === 'newest') {{
+          const da = a.published ? new Date(a.published).getTime() : 0;
+          const db = b.published ? new Date(b.published).getTime() : 0;
+          return db - da;
+        }}
+        if (currentSort === 'oldest') {{
+          const da = a.published ? new Date(a.published).getTime() : 0;
+          const db = b.published ? new Date(b.published).getTime() : 0;
+          return da - db;
+        }}
+        if (currentSort === 'title-asc') {{
+          return (a.title || '').localeCompare(b.title || '');
+        }}
+        if (currentSort === 'title-desc') {{
+          return (b.title || '').localeCompare(a.title || '');
+        }}
+        if (currentSort === 'diff-asc') {{
+          const wa = diffWeight[(a.difficulty || '').toLowerCase()] || 99;
+          const wb = diffWeight[(b.difficulty || '').toLowerCase()] || 99;
+          if (wa !== wb) return wa - wb;
+          return (a.title || '').localeCompare(b.title || '');
+        }}
+        if (currentSort === 'diff-desc') {{
+          const wa = diffWeight[(a.difficulty || '').toLowerCase()] || 0;
+          const wb = diffWeight[(b.difficulty || '').toLowerCase()] || 0;
+          if (wa !== wb) return wb - wa;
+          return (a.title || '').localeCompare(b.title || '');
+        }}
+        return 0;
+      }});
+    }}
 
     function roomMatchesSearch(r, q) {{
       if (!q) return true;
@@ -811,20 +933,21 @@ def generate_thm_html(rooms):
     function renderTable() {{
       updateCounters();
       const filtered = filterRooms();
-      document.getElementById('stat-filtered-val').innerText = filtered.length.toLocaleString();
+      const sorted = sortRooms(filtered);
+      document.getElementById('stat-filtered-val').innerText = sorted.length.toLocaleString();
 
-      const totalPages = Math.ceil(filtered.length / pageSize) || 1;
+      const totalPages = Math.ceil(sorted.length / pageSize) || 1;
       if (currentPage > totalPages) currentPage = totalPages;
       if (currentPage < 1) currentPage = 1;
 
       const start = (currentPage - 1) * pageSize;
-      const pageItems = filtered.slice(start, start + pageSize);
+      const pageItems = sorted.slice(start, start + pageSize);
 
       const tbody = document.getElementById('rooms-table-body');
       tbody.innerHTML = '';
 
-      if (filtered.length === 0) {{
-        tbody.innerHTML = `<tr><td colspan="7" class="empty-state">No TryHackMe rooms found matching your current filter. Try clicking "Reset Filters" or switching Difficulty to "All".</td></tr>`;
+      if (sorted.length === 0) {{
+        tbody.innerHTML = `<tr><td colspan="8" class="empty-state">No TryHackMe rooms found matching your current filter. Try clicking "Reset" or switching Difficulty to "All".</td></tr>`;
         document.getElementById('page-summary-text').innerText = '0 rooms found';
         document.getElementById('prev-page-btn').disabled = true;
         document.getElementById('next-page-btn').disabled = true;
@@ -856,6 +979,7 @@ def generate_thm_html(rooms):
           : '<span style="color: var(--thm-text-dark); font-size: 0.8rem;">No</span>';
 
         const safeImg = r.imageURL || fallbackImg;
+        const dateHtml = formatDate(r.published);
 
         tr.innerHTML = `
           <td>
@@ -874,18 +998,20 @@ def generate_thm_html(rooms):
             </a>
           </td>
           <td><span class="badge ${{diffClass}}">${{r.difficulty}}</span></td>
+          <td>${{dateHtml}}</td>
           <td>${{compHtml}}</td>
           <td>${{wuHtml}}</td>
         `;
         tbody.appendChild(tr);
       }});
 
-      const end = Math.min(start + pageSize, filtered.length);
-      document.getElementById('page-summary-text').innerText = `Showing ${{(start + 1).toLocaleString()}} to ${{end.toLocaleString()}} of ${{filtered.length.toLocaleString()}} rooms`;
+      const end = Math.min(start + pageSize, sorted.length);
+      document.getElementById('page-summary-text').innerText = `Showing ${{(start + 1).toLocaleString()}} to ${{end.toLocaleString()}} of ${{sorted.length.toLocaleString()}} rooms`;
       document.getElementById('page-number-indicator').innerText = `Page ${{currentPage}} of ${{totalPages}}`;
 
       document.getElementById('prev-page-btn').disabled = (currentPage <= 1);
       document.getElementById('next-page-btn').disabled = (currentPage >= totalPages);
+      updateSortIcons();
     }}
 
     // Filter Buttons Handlers
@@ -945,14 +1071,58 @@ def generate_thm_html(rooms):
       renderTable();
     }});
 
+    function updateSortIcons() {{
+      const icons = {{
+        title: document.getElementById('sort-icon-title'),
+        diff: document.getElementById('sort-icon-diff'),
+        date: document.getElementById('sort-icon-date')
+      }};
+      if (!icons.title || !icons.diff || !icons.date) return;
+
+      icons.title.innerText = '⇅';
+      icons.diff.innerText = '⇅';
+      icons.date.innerText = '⇅';
+
+      if (currentSort === 'newest') icons.date.innerText = '▼';
+      else if (currentSort === 'oldest') icons.date.innerText = '▲';
+      else if (currentSort === 'title-asc') icons.title.innerText = '▲';
+      else if (currentSort === 'title-desc') icons.title.innerText = '▼';
+      else if (currentSort === 'diff-asc') icons.diff.innerText = '▲';
+      else if (currentSort === 'diff-desc') icons.diff.innerText = '▼';
+    }}
+
+    document.getElementById('sort-select').addEventListener('change', (e) => {{
+      currentSort = e.target.value;
+      currentPage = 1;
+      renderTable();
+    }});
+
+    document.querySelectorAll('.sortable').forEach(th => {{
+      th.addEventListener('click', () => {{
+        const key = th.getAttribute('data-sort-key');
+        if (key === 'date') {{
+          currentSort = (currentSort === 'newest') ? 'oldest' : 'newest';
+        }} else if (key === 'title') {{
+          currentSort = (currentSort === 'title-asc') ? 'title-desc' : 'title-asc';
+        }} else if (key === 'diff') {{
+          currentSort = (currentSort === 'diff-asc') ? 'diff-desc' : 'diff-asc';
+        }}
+        document.getElementById('sort-select').value = currentSort;
+        currentPage = 1;
+        renderTable();
+      }});
+    }});
+
     document.getElementById('btn-reset-filters').addEventListener('click', () => {{
       currentDifficulty = 'all';
       currentTier = 'all';
       currentType = 'all';
       currentComp = 'all';
       currentWu = 'all';
+      currentSort = 'newest';
       searchQuery = '';
       document.getElementById('search-input').value = '';
+      document.getElementById('sort-select').value = 'newest';
       
       document.querySelectorAll('[data-diff]').forEach(b => b.classList.remove('active'));
       document.querySelector('[data-diff="all"]').classList.add('active');
