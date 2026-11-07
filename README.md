@@ -20,6 +20,8 @@ Repository of Capture The Flag (CTF) challenge artifacts, solver scripts, and te
 | **TryHackMe (THM)** | [Scripting](./THM/scripting/) | Scripting / Python Socket Automations & AES-GCM UDP | [`THM/scripting/README.md`](./THM/scripting/README.md) |
 | **TryHackMe (THM)** | [Chrome](./THM/chrome/) | Forensics / SMB2 Carving & Chrome DPAPI / SQLite Decryption | [`THM/chrome/README.md`](./THM/chrome/README.md) |
 | **TryHackMe (THM)** | [Extracted](./THM/extractedroom/) | Forensics / KeePass Memory Dump CVE-2023-32784 & KDBX Cracking | [`THM/extractedroom/README.md`](./THM/extractedroom/README.md) |
+| **TryHackMe (THM)** | [Block](./THM/blockroom/) | DFIR / LSASS Minidump & Encrypted SMB3 Session Key Derivation | [`THM/blockroom/README.md`](./THM/blockroom/README.md) |
+| **TryHackMe (THM)** | [After Hours](./THM/hh-afterhours-b090d1f0/) | DFIR / WMI CIM Repository Persistence, Raw DEFLATE & .NET Reversing | [`THM/hh-afterhours-b090d1f0/README.md`](./THM/hh-afterhours-b090d1f0/README.md) |
 | **Google Cloud Security** | [Operation Cymbal: Cold Room (Overview)](./Operation%20Cymbal/) | Threat Intelligence & Google SecOps (Chronicle SIEM) | [`Operation Cymbal/README.md`](./Operation%20Cymbal/README.md) |
 | **Google Cloud Security** | [Operation Cymbal — Deceptive Click](./Operation%20Cymbal/Deceptive%20Click/) | SocGholish / FAKEUPDATES, Kerberoasting & Exfiltration | [`Operation Cymbal/Deceptive Click/README.md`](./Operation%20Cymbal/Deceptive%20Click/README.md) |
 | **Google Cloud Security** | [Operation Cymbal — OAuth Heist](./Operation%20Cymbal/OAuth%20Heist/) | ShinyHunters / UNC6240, Okta MFA Bypass & DB Dump | [`Operation Cymbal/OAuth Heist/README.md`](./Operation%20Cymbal/OAuth%20Heist/README.md) |
@@ -29,7 +31,7 @@ Repository of Capture The Flag (CTF) challenge artifacts, solver scripts, and te
 
 - **Filter Criteria**: Strictly `kind: rooms` (1,403 total rooms)
 - **Completed (`khoiduong2913`)**: 450 / 1403 (32.1%)
-- **Local Write-Ups**: 13 rooms
+- **Local Write-Ups**: 14 rooms
 - **Live Web App**: [https://mynameiskoi.github.io/CTF/](https://mynameiskoi.github.io/CTF/)
 
 Click below to expand rooms by difficulty:
@@ -751,7 +753,7 @@ Click below to expand rooms by difficulty:
 | [`xss2shellcve202664638`](https://tryhackme.com/r/room/xss2shellcve202664638) | walkthrough | XSS2Shell: CVE-2026-64638 | medium | No | No |
 | [`bypassingcloudsecurity`](https://tryhackme.com/r/room/bypassingcloudsecurity) | walkthrough | Bypassing Cloud Security | medium | No | No |
 | [`hh-theguestbook-0130ffaf`](https://tryhackme.com/r/room/hh-theguestbook-0130ffaf) | challenge | The Guestbook | medium | No | No |
-| [`hh-afterhours-b090d1f0`](https://tryhackme.com/r/room/hh-afterhours-b090d1f0) | challenge | After Hours | medium | Yes | No |
+| [`hh-afterhours-b090d1f0`](https://tryhackme.com/r/room/hh-afterhours-b090d1f0) | challenge | After Hours | medium | Yes | [Yes](https://github.com/MynameisKoi/CTF/blob/main/THM/hh-afterhours-b090d1f0/README.md) |
 | [`thm-ctf-jackpot-overflow`](https://tryhackme.com/r/room/thm-ctf-jackpot-overflow) | challenge | Overflow The Jackpot CTF | medium | No | No |
 | [`hh-infinitypool-5b3548af`](https://tryhackme.com/r/room/hh-infinitypool-5b3548af) | challenge | Infinity Pool | medium | Yes | No |
 | [`hh-thehollowshell-ddb582ac`](https://tryhackme.com/r/room/hh-thehollowshell-ddb582ac) | challenge | The Hollow Shell | medium | Yes | No |

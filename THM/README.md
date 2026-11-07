@@ -5,7 +5,7 @@
 - **TryHackMe Username**: `khoiduong2913` (`644ac05fbd4b3a0055223e91`)
 - **Total Rooms in Catalog**: `1666`
 - **Completed Rooms**: `462`
-- **Rooms with Local Write-Up**: `13`
+- **Rooms with Local Write-Up**: `14`
 - **Full Dataset (All 26 Room Parameters + 2 Status Columns)**: [`thm_rooms_khoiduong2913.csv`](./thm_rooms_khoiduong2913.csv)
 
 ## Columns Included in `thm_rooms_khoiduong2913.csv`
@@ -53,6 +53,7 @@
 | [`directorydfirroom`](./directorydfirroom/) | Directory | challenge | hard | True | Yes | [Yes](./directorydfirroom/README.md) |
 | [`extractedroom`](./extractedroom/) | Extracted | challenge | medium | True | Yes | [Yes](./extractedroom/README.md) |
 | [`handbookfortherecentlycompromised`](./handbookfortherecentlycompromised/) | Handbook for the Recently Compromised | challenge | easy | True | Yes | [Yes](./handbookfortherecentlycompromised/README.md) |
+| [`hh-afterhours-b090d1f0`](./hh-afterhours-b090d1f0/) | After Hours | challenge | medium | True | Yes | [Yes](./hh-afterhours-b090d1f0/README.md) |
 | [`mayhemroom`](./mayhemroom/) | Mayhem | challenge | medium | True | Yes | [Yes](./mayhemroom/README.md) |
 | [`mrphisher`](./mrphisher/) | Mr. Phisher | challenge | easy | False | Yes | [Yes](./mrphisher/README.md) |
 | [`scripting`](./scripting/) | Scripting | challenge | medium | False | Yes | [Yes](./scripting/README.md) |
