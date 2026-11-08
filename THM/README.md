@@ -4,8 +4,8 @@
 
 - **TryHackMe Username**: `khoiduong2913` (`644ac05fbd4b3a0055223e91`)
 - **Total Rooms in Catalog**: `1666`
-- **Completed Rooms**: `462`
-- **Rooms with Local Write-Up**: `37`
+- **Completed Rooms**: `463`
+- **Rooms with Local Write-Up**: `38`
 - **Full Dataset (All 26 Room Parameters + 2 Status Columns)**: [`thm_rooms_khoiduong2913.csv`](./thm_rooms_khoiduong2913.csv)
 
 ## Columns Included in `thm_rooms_khoiduong2913.csv`
@@ -78,6 +78,7 @@
 | [`mayhemroom`](./mayhemroom/) | Mayhem | challenge | medium | True | Yes | [Yes](./mayhemroom/README.md) |
 | [`mrphisher`](./mrphisher/) | Mr. Phisher | challenge | easy | False | Yes | [Yes](./mrphisher/README.md) |
 | [`picklerick`](./picklerick/) | Pickle Rick | challenge | easy | True | Yes | [Yes](./picklerick/README.md) |
+| [`revilcorp`](./revilcorp/) | REvil Corp | challenge | medium | True | Yes | [Yes](./revilcorp/README.md) |
 | [`scripting`](./scripting/) | Scripting | challenge | medium | False | Yes | [Yes](./scripting/README.md) |
 | [`thewaitingroom`](./thewaitingroom/) | The Waiting Room | challenge | medium | True | Yes | [Yes](./thewaitingroom/README.md) |
 | [`vectara`](./vectara/) | Vectara | challenge | easy | True | Yes | [Yes](./vectara/README.md) |

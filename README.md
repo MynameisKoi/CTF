@@ -30,8 +30,8 @@ Repository of Capture The Flag (CTF) challenge artifacts, solver scripts, and te
 ## TryHackMe Rooms Directory (Interactive Difficulty Filter)
 
 - **Filter Criteria**: Strictly `kind: rooms` (1,403 total rooms)
-- **Completed (`khoiduong2913`)**: 450 / 1403 (32.1%)
-- **Local Write-Ups**: 37 rooms
+- **Completed (`khoiduong2913`)**: 451 / 1403 (32.1%)
+- **Local Write-Ups**: 38 rooms
 - **Live Web App**: [https://mynameiskoi.github.io/CTF/](https://mynameiskoi.github.io/CTF/)
 
 Click below to expand rooms by difficulty:
@@ -1162,7 +1162,7 @@ Click below to expand rooms by difficulty:
 | [`windowsreversingintro`](https://tryhackme.com/r/room/windowsreversingintro) | walkthrough | Windows Reversing Intro | medium | No | No |
 | [`opsec`](https://tryhackme.com/r/room/opsec) | walkthrough | Red Team OPSEC | medium | Yes | No |
 | [`cybercrafted`](https://tryhackme.com/r/room/cybercrafted) | challenge | CyberCrafted | medium | No | No |
-| [`revilcorp`](https://tryhackme.com/r/room/revilcorp) | challenge | REvil Corp | medium | No | No |
+| [`revilcorp`](https://tryhackme.com/r/room/revilcorp) | challenge | REvil Corp | medium | Yes | [Yes](https://github.com/MynameisKoi/CTF/blob/main/THM/revilcorp/README.md) |
 | [`containme1`](https://tryhackme.com/r/room/containme1) | challenge | ContainMe | medium | No | No |
 | [`phishingyl`](https://tryhackme.com/r/room/phishingyl) | walkthrough | Phishing | medium | Yes | No |
 | [`labyrinth8llv`](https://tryhackme.com/r/room/labyrinth8llv) | challenge | Minotaur's Labyrinth | medium | No | No |
